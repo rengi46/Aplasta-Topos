@@ -32,4 +32,4 @@ window.onclick = function (event) {
 //TODO start time do section close
 // window.onload = function () {
 //     timeSection()
-}
+//}
