@@ -8,6 +8,7 @@ const lvl=document.getElementById("lvl")
 let score=0
 let life=3
 
+let userScore= document.getElementById('userScore')
 
 const Cuadrado=document.querySelectorAll(".hueco")
 

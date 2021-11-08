@@ -9,21 +9,20 @@ function modalText(text) {
 }
 
 function modalStart() {
-    modalContent[0].appendChild(newh2('Welcome'))
+    modalContent[0].appendChild(newH2('Welcome'))
     modalContent[0].appendChild(newP('Insert Your User Name'))
     modalContent[0].appendChild(newInput())
     modalContent[0].appendChild(newButton())
     openModal()
 }
 
-function newButton() {
-    buttonText = 'Start'
+function newButton(name = 'Start') {
     button = document.createElement('button')
     button.classList.add('modal-content')
     button.classList.add('form-element')
     button.setAttribute('id', 'Next_page')
     button.setAttribute('onclick', 'start()')
-    button.innerHTML = buttonText
+    button.innerHTML = name
     return button
 }
 
@@ -31,6 +30,7 @@ function start() {
     Hide()
     TimeBar()
     Tprogres.classList.toggle("timeOut")
+    
 }
 
 
@@ -41,6 +41,14 @@ function openModal() {
 //TODO modal close
 function closeModal() {
     modal.style.display = "none";
+    cleanModal()
+}
+
+//! clean modal 
+function cleanModal(){
+        while (modalContent[0].firstChild) {
+            modalContent[0].removeChild(modalContent[0].lastChild);
+        }
 }
 
 //TODO clicks on <span> (x), close the modal
@@ -60,14 +68,14 @@ window.onload = function () {
     modalStart()
 }
 
-function newh2(newContent) {
-    result = document.createElement('div')
+function newH2(newContent) {
+    result = document.createElement('h2')
     result.innerHTML = newContent
     return result
 }
 
 function newP(newContent) {
-    result = document.createElement('div')
+    result = document.createElement('p')
     result.innerHTML = newContent
     return result
 }
@@ -83,13 +91,13 @@ function newInput() {
 
 function TimeBar() {
     var antes = new Date
-    newh2 = document.createElement("h2")
+    newH2 = document.createElement("h2")
     newp = document.createElement("p")
-    newh2.innerHTML = "Your lose"
+    newH2.innerHTML = "Your lose"
     newp.innerHTML = "Try again"
-    console.log(newh2)
+    console.log(newH2)
     console.log(modal.style.display)
-    modalContent[0].appendChild(newh2)
+    modalContent[0].appendChild(newH2)
     modalContent[0].appendChild(newp)
 
     setTimeout(function () {
@@ -99,40 +107,30 @@ function TimeBar() {
     }, 10000)
 }
 function yourloose() {
-    newh2 = document.createElement("h2")
-    newp = document.createElement("p")
-    newh2.innerHTML = "Your lose"
-    newp.innerHTML = "Try again"
-    console.log(newh2)
-    console.log(modal.style.display)
-    modalContent[0].appendChild(newh2)
-    modalContent[0].appendChild(newp)
+    // newH2 = document.createElement("h2")
+    // newp = document.createElement("p")
+    // newH2.innerHTML = "Your lose"
+    // newp.innerHTML = "Try again"
+    // console.log(newH2)
+    // console.log(modal.style.display)
+    modalContent[0].appendChild(newH2("You Lose"))
+    modalContent[0].appendChild(newP("Try again"))
     modalContent[0].appendChild(newButton())
-    // newButton()
     openModal()
-    // setTimeout(function () {
-    //     openModal()
-    //     var Despues = new Date
-    //     console.log(Despues.getTime() - antes.getTime())
-    // }, 10000)
+
 }
 function youwin() {
-    newh2 = document.createElement("h2")
-    newp = document.createElement("p")
-    newh2.innerHTML = "You Win"
-    newp.innerHTML = "Try again"
-    console.log(newh2)
-    console.log(modal.style.display)
-    modalContent[0].appendChild(newh2)
-    modalContent[0].appendChild(newp)
+    // newH2 = document.createElement("h2")
+    // newp = document.createElement("p")
+    // newH2.innerHTML = "You Win"
+    // newp.innerHTML = "Try again"
+    // console.log(newH2)
+    // console.log(modal.style.display)
+    modalContent[0].appendChild(newH2("You Win"))
+    modalContent[0].appendChild(newP("Try again"))
     modalContent[0].appendChild(newButton())
-    // newButton()
     openModal()
-    // setTimeout(function () {
-    //     openModal()
-    //     var Despues = new Date
-    //     console.log(Despues.getTime() - antes.getTime())
-    // }, 10000)
+
 }
 
 añadiendolo()
@@ -150,34 +148,28 @@ function moveMole() {
 }
 
 moveMole()
-function ChangeLevel(){
-    
+function ChangeLevel() {
+
 }
 function Hide() {
-    //   Start.style.display="none";
-    //   First.style.display="block";
     closeModal()
 }
 //Choose 
 Cuadrado.forEach(cuadrado => {
-    cuadrado.addEventListener("click", ()=>{
-      if (cuadrado.classList[1] == "oso" ){
-        score++
-        youwin()
-        console.log(score)
-      } else if(life>0){
-        life--
-        console.log(life)
+    cuadrado.addEventListener("click", () => {
+        if (cuadrado.classList[1] == "oso") {
+            score++
+            userScore.innerHTML = score
+            youwin()
+            console.log(score)
+        } else if (life > 0) {
+            life--
+            console.log(life)
 
-      } else if (life==0){
-        yourloose()
-      }
+        } else if (life == 0) {
+            yourloose()
+            score= 0
+            userScore.innerHTML = score
+        }
     });
 });
-
-//   function score(){
-
-//   }
-    // Cuadrado.forEach(cuadrado => {
-    //   cuadrado.addEventListener('click', () => {
-    // })
