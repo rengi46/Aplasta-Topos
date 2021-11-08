@@ -4,28 +4,26 @@ function modalText(text) {
     pOne = document.createElement('p')
     pOne.innerHTML = text
     modalContent[0].appendChild(pOne)
-    buttons= newButton()
-    modalContent[0].appendChild(buttons)
+    modalContent[0].appendChild(newButton())
     openModal()
 }
 
 function modalStart() {
-    pagehtml = ''
-    startPage = userNameStart()
-    console.log(startPage)
-    pagehtml.innerHTML = startPage
-    modalContent[0].appendChild(startPage)
+    modalContent[0].appendChild(newh2('Welcome'))
+    modalContent[0].appendChild(newP('Insert Your User Name'))
+    modalContent[0].appendChild(newInput())
+    modalContent[0].appendChild(newButton())
     openModal()
 }
 
-function newButton(){
-    buttonText= 'Start'
-    button= document.createElement('button')
+function newButton() {
+    buttonText = 'Start'
+    button = document.createElement('button')
     button.classList.add('modal-content')
     button.classList.add('form-element')
     button.setAttribute('id', 'Next_page')
     button.setAttribute('onclick', 'start()')
-    button.innerHTML= buttonText
+    button.innerHTML = buttonText
     return button
 }
 
@@ -33,7 +31,7 @@ function start() {
     Hide()
     TimeBar()
     Tprogres.classList.toggle("timeOut")
-  }
+}
 
 
 //TODO modal open
@@ -43,8 +41,6 @@ function openModal() {
 //TODO modal close
 function closeModal() {
     modal.style.display = "none";
-    modalContent[0].removeChild(modalContent[0].getElementsByTagName('p')[0])
-    modalContent[0].removeChild(modalContent[0].getElementsByTagName('button')[0])
 }
 
 //TODO clicks on <span> (x), close the modal
@@ -59,50 +55,31 @@ window.onclick = function (event) {
     }
 }
 
-//TODO start time do section close
-// window.onload = function () {
-//     timeSection()
-//}
+//TODO open modal start
+window.onload = function () {
+    modalStart()
+}
 
-function newDiv(newContent) {
+function newh2(newContent) {
     result = document.createElement('div')
-    //result.innerHTML = newContent
+    result.innerHTML = newContent
     return result
 }
 
 function newP(newContent) {
     result = document.createElement('div')
-    //result.innerHTML = newContent
+    result.innerHTML = newContent
     return result
 }
 
-function newInput(newContent) {
-    result = document.createElement('div')
-    //result.innerHTML = newContent
+function newInput() {
+    result = document.createElement('input')
+    result.setAttribute('type', 'text')
+    result.setAttribute('id', 'userInput')
+    result.classList.add('modal-content')
+    result.classList.add('form-element')
     return result
 }
-
-function userNameStart() {
-    pOne = 'User Name'
-    pOne.innerHTML = 'User Name'
-    div1 = newDiv()
-    div1.innerHTML = pOne
-    div1.classList.add('form-Element')
-    console.log(div1)
-    allUser = div1
-    inputUser = newInput()
-    inputUser.setAttribute('id', 'name')
-    div2.innerHTML = inputUser
-    inputButton = newInput()
-    inputButton.setAttribute('id', 'Next_page')
-    div2.innerHTML += inputButton
-    //div2= newDiv(inputUser, inputButton)
-    div2.classList.add('form-Element')
-    allUser += div2
-    console.log(allUser)
-    return allUser
-}
-
 
 function TimeBar() {
     var antes = new Date
@@ -196,10 +173,10 @@ Cuadrado.forEach(cuadrado => {
         yourloose()
       }
     });
-  });
+});
 
 //   function score(){
-      
+
 //   }
     // Cuadrado.forEach(cuadrado => {
     //   cuadrado.addEventListener('click', () => {
