@@ -103,7 +103,23 @@ function TimeBar() {
         console.log(Despues.getTime() - antes.getTime())
     }, 10000)
 }
-
+function yourloose() {
+    newh2 = document.createElement("h2")
+    newp = document.createElement("p")
+    newh2.innerHTML = "Your lose"
+    newp.innerHTML = "Try again"
+    console.log(newh2)
+    console.log(modal.style.display)
+    modalContent[0].appendChild(newh2)
+    modalContent[0].appendChild(newp)
+    
+openModal()
+    // setTimeout(function () {
+    //     openModal()
+    //     var Despues = new Date
+    //     console.log(Despues.getTime() - antes.getTime())
+    // }, 10000)
+}
 
 añadiendolo()
 
@@ -137,7 +153,7 @@ Cuadrado.forEach(cuadrado => {
         console.log(life)
 
       } else if (life==0){
-        
+        yourloose()
       }
     });
   });
