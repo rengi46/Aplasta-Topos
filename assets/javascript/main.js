@@ -130,8 +130,27 @@ function yourloose() {
     console.log(modal.style.display)
     modalContent[0].appendChild(newh2)
     modalContent[0].appendChild(newp)
-    
-openModal()
+    modalContent[0].appendChild(newButton())
+    // newButton()
+    openModal()
+    // setTimeout(function () {
+    //     openModal()
+    //     var Despues = new Date
+    //     console.log(Despues.getTime() - antes.getTime())
+    // }, 10000)
+}
+function youwin() {
+    newh2 = document.createElement("h2")
+    newp = document.createElement("p")
+    newh2.innerHTML = "You Win"
+    newp.innerHTML = "Try again"
+    console.log(newh2)
+    console.log(modal.style.display)
+    modalContent[0].appendChild(newh2)
+    modalContent[0].appendChild(newp)
+    modalContent[0].appendChild(newButton())
+    // newButton()
+    openModal()
     // setTimeout(function () {
     //     openModal()
     //     var Despues = new Date
@@ -150,11 +169,13 @@ function añadiendolo() {
 };
 
 function moveMole() {
-    setInterval(añadiendolo, 300)
+    setInterval(añadiendolo, 1000)
 }
 
 moveMole()
-
+function ChangeLevel(){
+    
+}
 function Hide() {
     //   Start.style.display="none";
     //   First.style.display="block";
@@ -165,6 +186,7 @@ Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", ()=>{
       if (cuadrado.classList[1] == "oso" ){
         score++
+        youwin()
         console.log(score)
       } else if(life>0){
         life--
