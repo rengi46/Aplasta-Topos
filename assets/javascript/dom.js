@@ -11,7 +11,7 @@ function añadiendolo(){
     };
     
     function moveMole() {
-     setInterval(añadiendolo, 100)
+     setInterval(añadiendolo, 1000)
     }
     moveMole()
 
