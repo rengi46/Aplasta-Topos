@@ -157,9 +157,14 @@ function youwin() {
     //     console.log(Despues.getTime() - antes.getTime())
     // }, 10000)
 }
-
+//Dificultad
+Dificultad(10)
 añadiendolo()
-
+function Dificultad(a){
+    const b= a+"00"
+    parseInt(b)
+    setInterval(añadiendolo, b)
+}
 function añadiendolo() {
     Cuadrado.forEach(cuadrado => {
         cuadrado.classList.remove("oso")
@@ -168,11 +173,6 @@ function añadiendolo() {
     Cajaaleatoria.classList.add('oso')
 };
 
-function moveMole() {
-    setInterval(añadiendolo, 1000)
-}
-
-moveMole()
 function ChangeLevel(){
     
 }
