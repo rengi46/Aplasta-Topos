@@ -2,10 +2,21 @@
 function modalText(text) {
     pOne = document.createElement('p')
     pOne.innerHTML = text
-    ModalContent.appendChild(pOne)
+    modalContent[0].appendChild(pOne)
     openModal()
-    setTimeout(closeModal, 3000)
+    //setTimeout(closeModal, 3000)
 }
+
+function modalStart() {
+    pagehtml=''
+    startPage= userNameStart()
+    console.log(startPage)
+    pagehtml.innerHTML= startPage
+    modalContent[0].appendChild(startPage)
+    openModal()
+    //setTimeout(closeModal, 3000)
+}
+
 
 //TODO modal open
 function openModal() {
@@ -14,17 +25,17 @@ function openModal() {
 //TODO modal close
 function closeModal() {
     modal.style.display = "none";
-    ModalContent.removeChild(ModalContent.getElementsByTagName('p')[0])
+    modalContent[0].removeChild(modalContent[0].getElementsByTagName('p')[0])
 }
 
 //TODO clicks on <span> (x), close the modal
-span.onclick = function () {
+    span.onclick = function () {
     modal.style.display = "none";
 }
 
 //TODO clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-    if (event.target == MODAL) {
+    if (event.target == modal) {
         modal.style.display = "none";
     }
 }
@@ -33,3 +44,69 @@ window.onclick = function (event) {
 // window.onload = function () {
 //     timeSection()
 //}
+
+function newDiv(newContent) {
+    result = document.createElement('div')
+    //result.innerHTML = newContent
+    return result
+}
+
+function newP(newContent) {
+    result = document.createElement('div')
+    //result.innerHTML = newContent
+    return result
+}
+
+function newInput(newContent) {
+    result = document.createElement('div')
+    //result.innerHTML = newContent
+    return result
+}
+
+function userNameStart() {
+    pOne= 'User Name'
+    pOne.innerHTML='User Name'
+    div1= newDiv()
+    div1.innerHTML=pOne
+    div1.classList.add('form-Element')
+    console.log(div1)
+    allUser= div1
+    inputUser= newInput()
+    inputUser.setAttribute('id', 'name')
+    div2.innerHTML= inputUser
+    inputButton= newInput()
+    inputButton.setAttribute('id', 'Next_page')
+    div2.innerHTML+= inputButton
+    //div2= newDiv(inputUser, inputButton)
+    div2.classList.add('form-Element')
+    allUser += div2
+    console.log(allUser)
+    return allUser
+}
+
+
+añadiendolo()
+
+function añadiendolo(){
+  Cuadrado.forEach(cuadrado => {
+    cuadrado.classList.remove("oso")
+  })
+  Cajaaleatoria= Cuadrado[Math.floor(Math.random()*12)]
+  Cajaaleatoria.classList.add('oso')
+};
+
+function moveMole() {
+  setInterval(añadiendolo, 300)
+}
+
+moveMole()
+
+function Hide() {
+  Start.style.display="none";
+  First.style.display="block";
+  }
+
+
+    // Cuadrado.forEach(cuadrado => {
+    //   cuadrado.addEventListener('click', () => {
+    // })
