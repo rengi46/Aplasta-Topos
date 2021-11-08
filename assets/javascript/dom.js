@@ -3,6 +3,9 @@
 const Start=document.getElementById("first_page")
 const First=document.getElementById("container1")
 const butStart=document.getElementById("Next_page")
+const oso=document.querySelector(".oso")
+let score=0
+let life=3
 
 
 const Cuadrado=document.querySelectorAll(".hueco")
@@ -32,23 +35,23 @@ function Hide() {
 //     score++
 //   }
 // }
-console.log(score)
+
   // function takeTopo(){
    
-    Cuadrado.forEach(cuadrado => {
-      cuadrado.addEventListener("click", ()=>{
-        if (cuadrado.classList[1] == "oso" ){
-          score++
-          console.log(score)
-        } else if(life>0){
-          life--
-          console.log(life)
+    // Cuadrado.forEach(cuadrado => {
+    //   cuadrado.addEventListener("click", ()=>{
+    //     if (cuadrado.classList[1] == "oso" ){
+    //       score++
+    //       console.log(score)
+    //     } else if(life>0){
+    //       life--
+    //       console.log(life)
 
-        } else if (life==0){
+    //     } else if (life==0){
           
-        }
-      });
-    });
+    //     }
+    //   });
+    // });
   
   //   Cuadrado.forEach(cuadrado => {
   //     cuadrado.addEventListener("click"), ()=>{
