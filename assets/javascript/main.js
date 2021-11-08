@@ -3,8 +3,9 @@ function modalText(text) {
     pOne = document.createElement('p')
     pOne.innerHTML = text
     modalContent[0].appendChild(pOne)
+    buttons= newButton()
+    modalContent[0].appendChild(buttons)
     openModal()
-    //setTimeout(closeModal, 3000)
 }
 
 function modalStart() {
@@ -14,8 +15,24 @@ function modalStart() {
     pagehtml.innerHTML = startPage
     modalContent[0].appendChild(startPage)
     openModal()
-    //setTimeout(closeModal, 3000)
 }
+
+function newButton(){
+    buttonText= 'Start'
+    button= document.createElement('button')
+    button.classList.add('modal-content')
+    button.classList.add('form-element')
+    button.setAttribute('id', 'Next_page')
+    button.setAttribute('onclick', 'start()')
+    button.innerHTML= buttonText
+    return button
+}
+
+function start() {
+    Hide()
+    TimeBar()
+    Tprogres.classList.toggle("timeOut")
+  }
 
 
 //TODO modal open
@@ -26,6 +43,7 @@ function openModal() {
 function closeModal() {
     modal.style.display = "none";
     modalContent[0].removeChild(modalContent[0].getElementsByTagName('p')[0])
+    modalContent[0].removeChild(modalContent[0].getElementsByTagName('button')[0])
 }
 
 //TODO clicks on <span> (x), close the modal
