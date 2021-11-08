@@ -122,3 +122,24 @@
     border: 3px solid black;
     border-radius:5px;
 }
+
+
+
+.Tbar{
+    margin: 20px;
+    height: 20px;
+    border: 5px solid black;
+    background-color: rgb(173, 78, 78);
+    border-radius: 15px;
+}
+
+.Tpast{
+    height: 20px;
+    width: 0px;
+    border-radius: 15px;
+    background-color: red;
+    transition: width 10s;
+}
+.timeOut{
+    width: 375px;
+}
