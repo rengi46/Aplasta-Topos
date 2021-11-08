@@ -18,9 +18,9 @@ function closeModal() {
 }
 
 //TODO clicks on <span> (x), close the modal
-// SPAN.onclick = function () {
-//     MODAL.style.display = "none";
-// }
+span.onclick = function () {
+    modal.style.display = "none";
+}
 
 //TODO clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
