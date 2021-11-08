@@ -2,10 +2,6 @@ const Cuadrado=document.querySelectorAll(".hueco")
 
 
 
-
-
-
-
   añadiendolo()
 function añadiendolo(){
   Cuadrado.forEach(cuadrado => {
