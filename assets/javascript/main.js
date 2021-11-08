@@ -1,4 +1,5 @@
 //TODO modal window
+
 function modalText(text) {
     pOne = document.createElement('p')
     pOne.innerHTML = text
@@ -143,8 +144,25 @@ function Hide() {
     //   First.style.display="block";
     closeModal()
 }
+//Choose 
+Cuadrado.forEach(cuadrado => {
+    cuadrado.addEventListener("click", ()=>{
+      if (cuadrado.classList[1] == "oso" ){
+        score++
+        console.log(score)
+      } else if(life>0){
+        life--
+        console.log(life)
 
+      } else if (life==0){
+        
+      }
+    });
+  });
 
+//   function score(){
+      
+//   }
     // Cuadrado.forEach(cuadrado => {
     //   cuadrado.addEventListener('click', () => {
     // })
