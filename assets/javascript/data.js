@@ -11,7 +11,9 @@
 var startTime;
 var afterTime;
 
-
+var finalScore;
+var maxtime= 30000;
+var scoreResult=0
 function createUser(name="guest"){
     // let comp = JSON.parse(window.localStorage)
     // console.log(comp)

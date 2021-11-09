@@ -163,6 +163,7 @@ function TimeBar() {
     gameTime= setTimeout(function () {
         cleanModal()
         yourloose('Your time Finished')
+        modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
         resetGame()
         var Despues = new Date
         console.log(Despues.getTime() - antes.getTime())
@@ -200,7 +201,8 @@ function stopTimeBar(){
 
 function finalTime(){
     afterTime= new Date
-    return (afterTime.getTime() - startTime.getTime())/1000;
+    contTimer= afterTime.getTime() - startTime.getTime()
+    return contTimer;
 }
 
 function Dificultad(a){
@@ -235,14 +237,14 @@ Cuadrado.forEach(cuadrado => {
             score++
             nivel--
             Dificultad(nivel)
-            console.log(nivel)
+            //console.log(nivel)
             userScore.innerHTML = score
             stopTimeBar()
             cleanModal()
-            yourTime(finalTime())
+            yourTime(finalTime()/1000)
             resetTimeBar()
-
-            console.log(score)
+            playerScore()
+            //console.log(score)
         } else if (life > 1) {
             life--
             lives(life)
@@ -251,7 +253,7 @@ Cuadrado.forEach(cuadrado => {
             stopTimeBar()
             cleanModal()
             yourloose("You Don't have move Lives")
-            modalContent[0].appendChild(newP(score))
+            modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
             resetGame()
         }
     });
@@ -271,5 +273,20 @@ function resetGame(){
     life = 3
     score= 0
     userScore.innerHTML = score
-    nivel = 10
+    Dificultad(10)
+    scoreResult=0
+}
+
+//TODO calculate level time
+function playerScore(){
+    actualtime = finalTime()
+    minus= 3000 - actualtime
+    scoreResult += minus
+    minus=0
+}
+
+//TODO calculate final Score
+function calculateScore(){
+    finalScore = (maxtime - scoreResult)/1000
+    return finalScore
 }
