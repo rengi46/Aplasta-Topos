@@ -25,7 +25,6 @@ function yourloose(text = 'You Lose') {
     modalContent[0].appendChild(newButton('Try again', 'next()'))
     modalContent[0].appendChild(newButton('New User', 'modalStart()'))
     winersScore()
-    resetGame()
     openModal()
 }
 
