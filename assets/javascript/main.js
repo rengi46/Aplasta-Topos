@@ -45,7 +45,6 @@ function youwin() {
 function start() {
     Hide()
     TimeBar()
-    Tprogres.classList.toggle("timeOut")
     poneruser()
 }
 
@@ -138,19 +137,19 @@ function start() {
 
 //TODO Run time Bar
 function TimeBar() {
-    var antes = new Date
+    Tprogres.classList.add("timeOut")
     gameTime= setTimeout(function () {
+        Tprogres.classList.remove("timeOut")
         cleanModal()
         yourloose('Your time Finished')
         resetGame()
-        var Despues = new Date
-        console.log(Despues.getTime() - antes.getTime())
     }, 3000)
 }
 
 //TODO stop Time Bar
 function stopTimeBar(){
     clearTimeout(gameTime)
+    Tprogres.classList.remove("timeOut")
 }
 
 
