@@ -237,6 +237,7 @@ Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", () => {
         if (cuadrado.classList[1] == "oso") {
             score++
+            // Dificultad(score,50,1000)
             console.log(score)
             userScore.innerHTML = score
             stopTimeBar()
