@@ -4,6 +4,7 @@ function start() {
     TimeBar()
     poneruser()
     closeModal()
+
 }
 
 //TODO Button next
@@ -23,7 +24,7 @@ function TimeBar() {
         modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
         resetGame()
         var Despues = new Date
-        console.log(Despues.getTime() - antes.getTime())
+        // console.log(Despues.getTime() - antes.getTime())
     }, 3000)
 }
 
@@ -52,9 +53,8 @@ Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", () => {
         if (cuadrado.classList[1] == "oso") {
             score++
-            nivel--
-            Dificultad(nivel)
-            //console.log(nivel)
+            // Dificultad(score,50,1000)
+            console.log(score)
             userScore.innerHTML = score
             stopTimeBar()
             cleanModal()
@@ -75,6 +75,7 @@ Cuadrado.forEach(cuadrado => {
         }
     });
 });
+Dificultad(score,50,1000)
 
 //TODO lives bar count
 function lives(life){
@@ -91,7 +92,6 @@ function resetGame(){
     life = 3
     score= 0
     userScore.innerHTML = score
-    Dificultad(10)
     scoreResult=0
 }
 
