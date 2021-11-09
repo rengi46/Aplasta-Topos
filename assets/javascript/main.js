@@ -13,7 +13,7 @@ function modalStart() {
     modalContent[0].appendChild(newH2('Welcome'))
     modalContent[0].appendChild(newP('Insert Your User Name'))
     modalContent[0].appendChild(newInput())
-    modalContent[0].appendChild(newButton())
+    modalContent[0].appendChild(newButton('Start', 'start()'))
     openModal()
 }
 
@@ -21,7 +21,7 @@ function modalStart() {
 function yourloose(text = 'You Lose') {
     modalContent[0].appendChild(newH2(text))
     modalContent[0].appendChild(newP("Try again"))
-    modalContent[0].appendChild(newButton())
+    modalContent[0].appendChild(newButton('Next', 'next()'))
     openModal()
 }
 
@@ -30,7 +30,7 @@ function yourTime(time){
     text= `Your time is:${time} sec`
     modalContent[0].appendChild(newH2(text))
     modalContent[0].appendChild(newP("Press Next to Next Level "))
-    modalContent[0].appendChild(newButton())
+    modalContent[0].appendChild(newButton('Next', 'next()'))
     openModal()
 }
 
@@ -38,7 +38,7 @@ function yourTime(time){
 function youwin() {
     modalContent[0].appendChild(newH2("You Win"))
     modalContent[0].appendChild(newP("Try again"))
-    modalContent[0].appendChild(newButton())
+    modalContent[0].appendChild(newButton('Next', 'next()'))
     openModal()
 }
 
@@ -52,9 +52,15 @@ function youwin() {
 
 function start() {
     startTime=new Date
-    closeModal()
     TimeBar()
     poneruser()
+    closeModal()
+}
+
+function next(){
+    startTime=new Date
+    TimeBar()
+    closeModal()
 }
 
 function poneruser(){
@@ -134,12 +140,12 @@ function newInput() {
 }
 
 //TODO Create Element button
-function newButton(name = 'Start') {
+function newButton(name = 'Start', func ) {
     button = document.createElement('button')
     button.classList.add('modal-content')
     button.classList.add('form-element')
     button.setAttribute('id', 'Next_page')
-    button.setAttribute('onclick', 'start()')
+    button.setAttribute('onclick', func)
     button.innerHTML = name
     return button
 }
@@ -230,12 +236,12 @@ Cuadrado.forEach(cuadrado => {
             resetTimeBar()
 
             console.log(score)
-        } else if (life > 0) {
+        } else if (life > 1) {
             life--
             console.log(life)
             lives(life)
 
-        } else if (life == 0) {
+        } else if (life == 1) {
             stopTimeBar()
             cleanModal()
             yourloose("You Don't have move Lives")
