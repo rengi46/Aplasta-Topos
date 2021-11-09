@@ -8,6 +8,9 @@
 // let score=0
 // let life=3
 
+var startTime;
+var afterTime;
+
 
 function createUser(name="guest"){
     // let comp = JSON.parse(window.localStorage)
