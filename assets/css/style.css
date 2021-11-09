@@ -1,5 +1,9 @@
 *{
     background-color:rgba(156,230,81,255);
+    cursor: url(/assets/img/cursor4.cur),pointer;
+}
+*:active{
+    cursor: url(/assets/img/cursor3.cur),pointer;
 }
 /*
 #container1{
@@ -64,6 +68,7 @@
     width: 139px;
     background-image: url(/assets/img/hueco.PNG);
 }
+
 
 .oso{
     display: flex;
@@ -156,3 +161,4 @@
 .timeOut{
     width: 375px;
 }
+

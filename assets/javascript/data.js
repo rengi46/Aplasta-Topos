@@ -8,7 +8,12 @@
 // let score=0
 // let life=3
 
+var startTime;
+var afterTime;
 
+var finalScore;
+var maxtime= 30000;
+var scoreResult=0
 function createUser(name="guest"){
     // let comp = JSON.parse(window.localStorage)
     // console.log(comp)
@@ -54,4 +59,21 @@ function guardar(obj){
         jon=JSON.stringify(arrlocal)
         save.aplastaTopos=jon
     }
+}
+
+
+function winersScore(){
+    if(save.aplastaTopos){
+        var arrlocal=(JSON.parse(save.aplastaTopos));
+        const maxscore=[]
+        var ranking=document.createElement("ul")
+        var first=document.createElement("li")
+        var second=document.createElement("li")
+        var three=document.createElement("li")
+        arrlocal.sort((a,b)=>{return a.scoreUser-b.scoreUser})
+        arrlocal.forEach((e) => {
+            console.log(`${e.nameUser} ${e.scoreUser}`);
+        });
+    }
+
 }
