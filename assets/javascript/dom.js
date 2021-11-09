@@ -11,7 +11,7 @@ let jon
 
 let score=0
 let life=3
-
+var nivel= 10;
 let userScore= document.getElementById('userScore')
 
 const Cuadrado=document.querySelectorAll(".hueco")

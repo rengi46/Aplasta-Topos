@@ -229,6 +229,9 @@ Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", () => {
         if (cuadrado.classList[1] == "oso") {
             score++
+            nivel--
+            Dificultad(nivel)
+            console.log(nivel)
             userScore.innerHTML = score
             stopTimeBar()
             cleanModal()
@@ -265,4 +268,5 @@ function resetGame(){
     life = 3
     score= 0
     userScore.innerHTML = score
+    nivel = 10
 }
