@@ -29,8 +29,11 @@
     border: 1px solid #888;
     border-radius: 8px;
     width: 80%;
+    text-align: center;
     /* Could be more or less, depending on screen size */
 }
+.modal-content>h2{background-color: white;}
+.modal-content>p{background-color: white;}
 
 /* The Close Button */
 
@@ -39,6 +42,7 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
+    background-color: white;
 }
 
 .close:hover, .close:focus {
@@ -46,6 +50,7 @@
     text-decoration: none;
     cursor: pointer;
 }
+
 
 
 
