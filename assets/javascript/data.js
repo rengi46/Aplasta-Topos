@@ -55,3 +55,19 @@ function guardar(obj){
         save.aplastaTopos=jon
     }
 }
+
+
+function winersScore(){
+    if(save.aplastaTopos){
+        var arrlocal=(JSON.parse(save.aplastaTopos));
+        const maxscore=[]
+        var ranking=document.createElement("ul")
+        var first=document.createElement("li")
+        var second=document.createElement("li")
+        var three=document.createElement("li")
+        console.log(arrlocal)
+        var a = arrlocal.map(function(o) { return o.scoreUser; })
+        console.log(a)
+    }
+
+}
