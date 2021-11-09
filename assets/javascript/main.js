@@ -25,8 +25,8 @@ function yourloose(text = 'You Lose') {
     modalContent[0].appendChild(newButton('Try again', 'next()'))
     modalContent[0].appendChild(newButton('New User', 'modalStart()'))
     winersScore()
-    resetGame()
     openModal()
+    addScore(user_box.value)
 }
 
 //TODO Display modal Time
@@ -81,7 +81,18 @@ function poneruser(){
 //     console.log(After.getTime() - startTime.getTime())
 // }, 10000)
 
-
+function addScore(name){
+    const user=createUser(name)
+    var arruser=(JSON.parse(save.aplastaTopos));
+    console.log(arruser)
+    var objuser=arruser[user]
+    objuser.userScore= finalScore;
+    arruser[user]=objuser
+    console.log(arruser)
+    arrayString= (JSON.stringify(arruser))
+    console.log(arrayString)
+    save.aplastaTopos= arrayString;
+}
 
 
 //TODO modal open
