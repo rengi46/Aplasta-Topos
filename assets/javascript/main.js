@@ -31,8 +31,18 @@ function start() {
     Hide()
     TimeBar()
     Tprogres.classList.toggle("timeOut")
+    poneruser()
 }
 
+function poneruser(){
+    const inputname= document.getElementById("userInput")
+    const user=createUser(inputname.value)
+    var arruser=(JSON.parse(save.aplastaTopos));
+    console.log(arruser)
+    var objuser=arruser[user]
+    console.log(objuser)
+    user_box.innerText=objuser.nameUser
+}
 
 //TODO modal open
 function openModal() {
@@ -111,14 +121,12 @@ function añadiendolo() {
 };
 
 function moveMole() {
-    setInterval(añadiendolo, 300)
+    setInterval(añadiendolo, 1000)
 }
 
 moveMole()
 
 function Hide() {
-    //   Start.style.display="none";
-    //   First.style.display="block";
     closeModal()
 }
 //Choose 
@@ -129,7 +137,7 @@ Cuadrado.forEach(cuadrado => {
             console.log(score)
         } else if (life > 0) {
             life--
-            console.log(life)
+            V(life)
 
         } else if (life == 0) {
 
