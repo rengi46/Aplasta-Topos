@@ -18,22 +18,10 @@ const Cuadrado=document.querySelectorAll(".hueco")
 
 function añadiendolo(){
   Cuadrado.forEach(cuadrado => {
-    if(cuadrado.classList[1]=="oso"){
-      cuadrado.classList.remove("oso")
-      cuadrado.classList.add("ososal")
-      setTimeout(function(){cuadrado.classList.remove("ososal")},300)
-    }
-    
-    
-
+    cuadrado.classList.remove("oso")
   })
   Cajaaleatoria= Cuadrado[Math.floor(Math.random()*12)]
-  Cajaaleatoria.classList.add('ososal')
-      setTimeout(function(){
-        Cajaaleatoria.classList.remove("ososal")
-        Cajaaleatoria.classList.add('oso')
-    },300)
-  
+  Cajaaleatoria.classList.add('oso')
   // prueba = Cajaaleatoria.id
 };
 
