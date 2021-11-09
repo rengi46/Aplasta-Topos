@@ -68,9 +68,10 @@ function winersScore(){
         var first=document.createElement("li")
         var second=document.createElement("li")
         var three=document.createElement("li")
-        console.log(arrlocal)
-        var a = arrlocal.map(function(o) { return o.scoreUser; })
-        console.log(a)
+        arrlocal.sort((a,b)=>{return a.scoreUser-b.scoreUser})
+        arrlocal.forEach((e) => {
+            console.log(`${e.nameUser} ${e.scoreUser}`);
+        });
     }
 
 }

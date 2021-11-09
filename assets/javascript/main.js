@@ -10,6 +10,7 @@
 
 //TODO Display modal Start
 function modalStart() {
+    cleanModal()
     modalContent[0].appendChild(newH2('Welcome'))
     modalContent[0].appendChild(newP('Insert Your User Name'))
     modalContent[0].appendChild(newInput())
@@ -21,7 +22,10 @@ function modalStart() {
 function yourloose(text = 'You Lose') {
     modalContent[0].appendChild(newH2(text))
     modalContent[0].appendChild(newP("Try again"))
-    modalContent[0].appendChild(newButton('Next', 'next()'))
+    modalContent[0].appendChild(newButton('Try again', 'next()'))
+    modalContent[0].appendChild(newButton('New User', 'modalStart()'))
+    winersScore()
+    resetGame()
     openModal()
 }
 
@@ -241,7 +245,6 @@ Cuadrado.forEach(cuadrado => {
             console.log(score)
         } else if (life > 1) {
             life--
-            console.log(life)
             lives(life)
 
         } else if (life == 1) {
