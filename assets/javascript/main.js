@@ -1,4 +1,17 @@
 //TODO modal window
+// function Startcount(){
+//     new Date
+// }
+// function AfterTime(){
+//     new Date
+// }
+var startTime;
+var afterTime;
+
+
+// var FinalTime= (AfterTime().getTime()- startTime().getTime())/ 1000;
+
+// var FinalTime /= 1000;
 
 function modalText(text) {
     pOne = document.createElement('p')
@@ -14,6 +27,7 @@ function modalStart() {
     modalContent[0].appendChild(newInput())
     modalContent[0].appendChild(newButton())
     openModal()
+    Startcount()
 }
 
 function newButton() {
@@ -28,10 +42,18 @@ function newButton() {
 }
 
 function start() {
+    startTime=new Date
     Hide()
     TimeBar()
     Tprogres.classList.toggle("timeOut")
 }
+
+
+// setTimeout(function () {
+//     console.log(After.getTime() - startTime.getTime())
+// }, 10000)
+
+
 
 
 //TODO modal open
@@ -98,41 +120,24 @@ function TimeBar() {
         console.log(Despues.getTime() - antes.getTime())
     }, 10000)
 }
-function yourloose() {
-    newh2 = document.createElement("h2")
-    newp = document.createElement("p")
-    newh2.innerHTML = "Your lose"
-    newp.innerHTML = "Try again"
-    console.log(newh2)
-    console.log(modal.style.display)
-    modalContent[0].appendChild(newh2)
-    modalContent[0].appendChild(newp)
-    modalContent[0].appendChild(newButton())
-    // newButton()
-    openModal()
-    // setTimeout(function () {
-    //     openModal()
-    //     var Despues = new Date
-    //     console.log(Despues.getTime() - antes.getTime())
-    // }, 10000)
-}
+// function yourloose() {
+//     modalContent[0].appendChild(newh2('Welcome'))
+//     modalContent[0].appendChild(newP('Insert Your User Name'))
+//     modalContent[0].appendChild(newInput())
+//     modalContent[0].appendChild(newButton())
+//     openModal()
+// }
 function youwin() {
-    newh2 = document.createElement("h2")
-    newp = document.createElement("p")
-    newh2.innerHTML = "You Win"
-    newp.innerHTML = "Try again"
-    console.log(newh2)
-    console.log(modal.style.display)
-    modalContent[0].appendChild(newh2)
-    modalContent[0].appendChild(newp)
-    modalContent[0].appendChild(newButton())
-    // newButton()
+    afterTime = new Date
+    console.log(finalTime())
+    modalContent[0].appendChild(newP('You win'))
+    // modalContent[0].appendChild(newP('try again'))
+    // modalContent[0].appendChild(newInput())
+    modalContent[0].appendChild(newButton("Try again"))
     openModal()
-    // setTimeout(function () {
-    //     openModal()
-    //     var Despues = new Date
-    //     console.log(Despues.getTime() - antes.getTime())
-    // }, 10000)
+}
+function finalTime(){
+    return (afterTime.getTime() - startTime.getTime())/1000;
 }
 //Dificultad
 Dificultad(10)
@@ -174,6 +179,7 @@ Cuadrado.forEach(cuadrado => {
       }
     });
 });
+
 
 //   function score(){
 
