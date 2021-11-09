@@ -41,7 +41,7 @@ function yourloose(text = 'You Lose') {
 
 //TODO Display modal Time
 function yourTime(time){
-    text= `Your time is:${time}`
+    text= `Your time is:${time} sec`
     modalContent[0].appendChild(newH2(text))
     modalContent[0].appendChild(newP("Press Next to Next Level "))
     modalContent[0].appendChild(newButton())
@@ -153,6 +153,7 @@ function newButton(name = 'Start') {
 
 //TODO start Game and time
 function start() {
+    startTime = new Date
     closeModal()
     TimeBar()
     Tprogres.classList.toggle("timeOut")
@@ -184,21 +185,25 @@ function stopTimeBar(){
 //     modalContent[0].appendChild(newButton())
 //     openModal()
 // }
-function youwin() {
-    afterTime = new Date
-    console.log(finalTime())
-    modalContent[0].appendChild(newP('You win'))
-    // modalContent[0].appendChild(newP('try again'))
-    // modalContent[0].appendChild(newInput())
-    modalContent[0].appendChild(newButton("Try again"))
-    openModal()
-}
+
+
+// function youwin() {
+//     //afterTime = new Date
+//     finalTime()
+//     console.log(finalTime())
+//     modalContent[0].appendChild(newP('You win'))
+//     // modalContent[0].appendChild(newP('try again'))
+//     // modalContent[0].appendChild(newInput())
+//     modalContent[0].appendChild(newButton("Try again"))
+//     openModal()
+// }
+
+
 function finalTime(){
+    afterTime= new Date
     return (afterTime.getTime() - startTime.getTime())/1000;
 }
-//Dificultad
-Dificultad(10)
-añadiendolo()
+
 function Dificultad(a){
     const b= a+"00"
     parseInt(b)
@@ -221,12 +226,11 @@ function moveMole() {
 Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", () => {
         if (cuadrado.classList[1] == "oso") {
-
             score++
             userScore.innerHTML = score
             stopTimeBar()
             cleanModal()
-            yourTime()
+            yourTime(finalTime())
             console.log(score)
         } else if (life > 0) {
             life--
