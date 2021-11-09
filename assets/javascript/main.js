@@ -1,17 +1,4 @@
 //TODO modal window
-// function Startcount(){
-//     new Date
-// }
-// function AfterTime(){
-//     new Date
-// }
-var startTime;
-var afterTime;
-
-
-// var FinalTime= (AfterTime().getTime()- startTime().getTime())/ 1000;
-
-// var FinalTime /= 1000;
 
 // function modalText(text) {
 //     pOne = document.createElement('p')
@@ -36,12 +23,11 @@ function yourloose(text = 'You Lose') {
     modalContent[0].appendChild(newP("Try again"))
     modalContent[0].appendChild(newButton())
     openModal()
-    Startcount()
 }
 
 //TODO Display modal Time
 function yourTime(time){
-    text= `Your time is:${time}`
+    text= `Your time is:${time} sec`
     modalContent[0].appendChild(newH2(text))
     modalContent[0].appendChild(newP("Press Next to Next Level "))
     modalContent[0].appendChild(newButton())
@@ -56,9 +42,17 @@ function youwin() {
     openModal()
 }
 
+//TODO start Game and time
+// function start() {
+//     startTime = new Date
+//     closeModal()
+//     TimeBar()
+//     Tprogres.classList.toggle("timeOut")
+// }
+
 function start() {
     startTime=new Date
-    Hide()
+    closeModal()
     TimeBar()
     poneruser()
 }
@@ -150,21 +144,18 @@ function newButton(name = 'Start') {
     return button
 }
 
-//TODO start Game and time
-function start() {
-    closeModal()
-    TimeBar()
-    Tprogres.classList.toggle("timeOut")
-}
+
 
 //TODO Run time Bar
 function TimeBar() {
+    var antes = new Date
     Tprogres.classList.add("timeOut")
     gameTime= setTimeout(function () {
-        Tprogres.classList.remove("timeOut")
         cleanModal()
         yourloose('Your time Finished')
         resetGame()
+        var Despues = new Date
+        console.log(Despues.getTime() - antes.getTime())
     }, 3000)
 }
 
@@ -183,26 +174,32 @@ function stopTimeBar(){
 //     modalContent[0].appendChild(newButton())
 //     openModal()
 // }
-function youwin() {
-    afterTime = new Date
-    console.log(finalTime())
-    modalContent[0].appendChild(newP('You win'))
-    // modalContent[0].appendChild(newP('try again'))
-    // modalContent[0].appendChild(newInput())
-    modalContent[0].appendChild(newButton("Try again"))
-    openModal()
-}
+
+
+// function youwin() {
+//     //afterTime = new Date
+//     finalTime()
+//     console.log(finalTime())
+//     modalContent[0].appendChild(newP('You win'))
+//     // modalContent[0].appendChild(newP('try again'))
+//     // modalContent[0].appendChild(newInput())
+//     modalContent[0].appendChild(newButton("Try again"))
+//     openModal()
+// }
+
+
 function finalTime(){
+    afterTime= new Date
     return (afterTime.getTime() - startTime.getTime())/1000;
 }
-//Dificultad
-Dificultad(10)
-añadiendolo()
+
 function Dificultad(a){
     const b= a+"00"
     parseInt(b)
     setInterval(añadiendolo, b)
 }
+
+
 function añadiendolo() {
     Cuadrado.forEach(cuadrado => {
         cuadrado.classList.remove("oso")
@@ -216,16 +213,22 @@ function moveMole() {
     setInterval(añadiendolo, 1000)
 }
 
+function resetTimeBar(){
+    Tprogres.classList.remove("timeOut")
+}
+
+
 //TODO click events
 Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", () => {
         if (cuadrado.classList[1] == "oso") {
-
             score++
             userScore.innerHTML = score
             stopTimeBar()
             cleanModal()
-            yourTime()
+            yourTime(finalTime())
+            resetTimeBar()
+
             console.log(score)
         } else if (life > 0) {
             life--
@@ -236,10 +239,12 @@ Cuadrado.forEach(cuadrado => {
             stopTimeBar()
             cleanModal()
             yourloose("You Don't have move Lives")
+            modalContent[0].appendChild(newP(score))
             resetGame()
         }
     });
 });
+
 
 function lives(life){
     if(life==3){lvl.style.backgroundImage="url(/assets/img/3vidas.png)"}
@@ -249,6 +254,7 @@ function lives(life){
 }
 
 function resetGame(){
+    resetTimeBar()
     lives(3)
     life = 3
     score= 0
