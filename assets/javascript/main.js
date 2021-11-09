@@ -59,6 +59,7 @@ function start() {
     TimeBar()
     poneruser()
     closeModal()
+
 }
 
 function next(){
@@ -71,9 +72,9 @@ function poneruser(){
     const inputname= document.getElementById("userInput")
     const user=createUser(inputname.value)
     var arruser=(JSON.parse(save.aplastaTopos));
-    console.log(arruser)
+    // console.log(arruser)
     var objuser=arruser[user]
-    console.log(objuser)
+    // console.log(objuser)
     user_box.innerText=objuser.nameUser
 }
 
@@ -177,7 +178,7 @@ function TimeBar() {
         modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
         resetGame()
         var Despues = new Date
-        console.log(Despues.getTime() - antes.getTime())
+        // console.log(Despues.getTime() - antes.getTime())
     }, 3000)
 }
 
@@ -216,14 +217,19 @@ function finalTime(){
     return contTimer;
 }
 
-function Dificultad(a){
-    const b= a+"00"
-    parseInt(b)
-    setInterval(añadiendolo, b)
+function Dificultad(nivel=0,time=50,max=1000){
+    const c=nivel*time
+    const d=max-c
+    setInterval(
+        function(){
+            añadiendolo()
+            console.log(score)
+            console.log(d)
+        }, d)
 }
 
-
 function añadiendolo() {
+    console.log("1")
     Cuadrado.forEach(cuadrado => {
         cuadrado.classList.remove("oso")
     })
@@ -232,9 +238,9 @@ function añadiendolo() {
 };
 
 //TODO Speed to move 
-function moveMole() {
-    setInterval(añadiendolo, 1000)
-}
+// function moveMole() {
+//     setInterval(añadiendolo, 1000)
+// }
 
 function resetTimeBar(){
     Tprogres.classList.remove("timeOut")
@@ -246,9 +252,8 @@ Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", () => {
         if (cuadrado.classList[1] == "oso") {
             score++
-            nivel--
-            Dificultad(nivel)
-            //console.log(nivel)
+            // Dificultad(score,50,1000)
+            console.log(score)
             userScore.innerHTML = score
             stopTimeBar()
             cleanModal()
@@ -269,6 +274,7 @@ Cuadrado.forEach(cuadrado => {
         }
     });
 });
+Dificultad(score,50,1000)
 
 
 function lives(life){
@@ -284,7 +290,6 @@ function resetGame(){
     life = 3
     score= 0
     userScore.innerHTML = score
-    Dificultad(10)
     scoreResult=0
 }
 
