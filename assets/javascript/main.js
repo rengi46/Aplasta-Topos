@@ -1,13 +1,14 @@
 //TODO modal window
 
-function modalText(text) {
-    pOne = document.createElement('p')
-    pOne.innerHTML = text
-    modalContent[0].appendChild(pOne)
-    modalContent[0].appendChild(newButton())
-    openModal()
-}
+// function modalText(text) {
+//     pOne = document.createElement('p')
+//     pOne.innerHTML = text
+//     modalContent[0].appendChild(pOne)
+//     modalContent[0].appendChild(newButton())
+//     openModal()
+// }
 
+//TODO Display modal Start
 function modalStart() {
     modalContent[0].appendChild(newH2('Welcome'))
     modalContent[0].appendChild(newP('Insert Your User Name'))
@@ -16,35 +17,43 @@ function modalStart() {
     openModal()
 }
 
-function newButton(name = 'Start') {
-    button = document.createElement('button')
-    button.classList.add('modal-content')
-    button.classList.add('form-element')
-    button.setAttribute('id', 'Next_page')
-    button.setAttribute('onclick', 'start()')
-    button.innerHTML = name
-    return button
+//TODO Display modal Lose
+function yourloose(text = 'You Lose') {
+    modalContent[0].appendChild(newH2(text))
+    modalContent[0].appendChild(newP("Try again"))
+    modalContent[0].appendChild(newButton())
+    openModal()
 }
 
-function start() {
-    Hide()
-    TimeBar()
-    Tprogres.classList.toggle("timeOut")
-    
+//TODO Display modal Time
+function yourTime(time){
+    text= `Your time is:${time}`
+    modalContent[0].appendChild(newH2(text))
+    modalContent[0].appendChild(newP("Press Next to Next Level "))
+    modalContent[0].appendChild(newButton())
+    openModal()
 }
 
+//TODO Display modal Win
+function youwin() {
+    modalContent[0].appendChild(newH2("You Win"))
+    modalContent[0].appendChild(newP("Try again"))
+    modalContent[0].appendChild(newButton())
+    openModal()
+}
 
 //TODO modal open
 function openModal() {
     modal.style.display = "block";
 }
+
 //TODO modal close
 function closeModal() {
     modal.style.display = "none";
     cleanModal()
 }
 
-//! clean modal 
+//TODO clean modal 
 function cleanModal(){
         while (modalContent[0].firstChild) {
             modalContent[0].removeChild(modalContent[0].lastChild);
@@ -68,18 +77,21 @@ window.onload = function () {
     modalStart()
 }
 
+
+//TODO create Element H2
 function newH2(newContent) {
     result = document.createElement('h2')
     result.innerHTML = newContent
     return result
 }
-
+//TODO create Element  paragraf
 function newP(newContent) {
     result = document.createElement('p')
     result.innerHTML = newContent
     return result
 }
 
+//TODO create Element input
 function newInput() {
     result = document.createElement('input')
     result.setAttribute('type', 'text')
@@ -89,52 +101,43 @@ function newInput() {
     return result
 }
 
+//TODO Create Element button
+function newButton(name = 'Start') {
+    button = document.createElement('button')
+    button.classList.add('modal-content')
+    button.classList.add('form-element')
+    button.setAttribute('id', 'Next_page')
+    button.setAttribute('onclick', 'start()')
+    button.innerHTML = name
+    return button
+}
+
+//TODO start Game and time
+function start() {
+    closeModal()
+    TimeBar()
+    Tprogres.classList.toggle("timeOut")
+}
+
+//TODO Run time Bar
 function TimeBar() {
     var antes = new Date
-    newH2 = document.createElement("h2")
-    newp = document.createElement("p")
-    newH2.innerHTML = "Your lose"
-    newp.innerHTML = "Try again"
-    console.log(newH2)
-    console.log(modal.style.display)
-    modalContent[0].appendChild(newH2)
-    modalContent[0].appendChild(newp)
-
-    setTimeout(function () {
-        openModal()
+    gameTime= setTimeout(function () {
+        cleanModal()
+        yourloose('Your time Finished')
+        resetGame()
         var Despues = new Date
         console.log(Despues.getTime() - antes.getTime())
-    }, 10000)
-}
-function yourloose() {
-    // newH2 = document.createElement("h2")
-    // newp = document.createElement("p")
-    // newH2.innerHTML = "Your lose"
-    // newp.innerHTML = "Try again"
-    // console.log(newH2)
-    // console.log(modal.style.display)
-    modalContent[0].appendChild(newH2("You Lose"))
-    modalContent[0].appendChild(newP("Try again"))
-    modalContent[0].appendChild(newButton())
-    openModal()
-
-}
-function youwin() {
-    // newH2 = document.createElement("h2")
-    // newp = document.createElement("p")
-    // newH2.innerHTML = "You Win"
-    // newp.innerHTML = "Try again"
-    // console.log(newH2)
-    // console.log(modal.style.display)
-    modalContent[0].appendChild(newH2("You Win"))
-    modalContent[0].appendChild(newP("Try again"))
-    modalContent[0].appendChild(newButton())
-    openModal()
-
+    }, 3000)
 }
 
-añadiendolo()
+//TODO stop Time Bar
+function stopTimeBar(){
+    clearTimeout(gameTime)
+}
 
+
+//TODO Start to create and move mole
 function añadiendolo() {
     Cuadrado.forEach(cuadrado => {
         cuadrado.classList.remove("oso")
@@ -143,33 +146,48 @@ function añadiendolo() {
     Cajaaleatoria.classList.add('oso')
 };
 
+//TODO Speed to move 
 function moveMole() {
     setInterval(añadiendolo, 1000)
 }
 
-moveMole()
-function ChangeLevel() {
-
-}
-function Hide() {
-    closeModal()
-}
-//Choose 
+//TODO click events
 Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", () => {
         if (cuadrado.classList[1] == "oso") {
+
             score++
             userScore.innerHTML = score
-            youwin()
+            stopTimeBar()
+            cleanModal()
+            yourTime()
             console.log(score)
         } else if (life > 0) {
             life--
             console.log(life)
+            lives(life)
 
         } else if (life == 0) {
-            yourloose()
-            score= 0
-            userScore.innerHTML = score
+            stopTimeBar()
+            cleanModal()
+            yourloose("You Don't have move Lives")
+            resetGame()
         }
     });
 });
+function lives(life){
+    if(life==3){lvl.style.backgroundImage="url(/assets/img/3vidas.png)"}
+    else if(life==2){lvl.style.backgroundImage="url(/assets/img/2vida.png)"}
+    else if(life==1){lvl.style.backgroundImage="url(/assets/img/1vida.png)"}
+    else lvl.style.backgroundImage="url(/assets/img/noVidas.png)"
+}
+
+function resetGame(){
+    lives(3)
+    life = 3
+    score= 0
+    userScore.innerHTML = score
+}
+// function addLive(){
+//     lvl.style.backgroundImage="url(/assets/img/3vidas.png)
+// }
