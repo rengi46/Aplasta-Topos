@@ -162,6 +162,7 @@ function start() {
 //TODO Run time Bar
 function TimeBar() {
     Tprogres.classList.add("timeOut")
+    Dificultad()
     gameTime= setTimeout(function () {
         Tprogres.classList.remove("timeOut")
         cleanModal()
@@ -204,11 +205,12 @@ function finalTime(){
     return (afterTime.getTime() - startTime.getTime())/1000;
 }
 
-function Dificultad(a){
-    const b= a+"00"
-    parseInt(b)
-    setInterval(añadiendolo, b)
+function Dificultad(lvl=0,time=50,max=1000){
+    const c=lvl*time
+    const d=max-c
+    setInterval(añadiendolo, d)
 }
+
 function añadiendolo() {
     Cuadrado.forEach(cuadrado => {
         cuadrado.classList.remove("oso")
@@ -218,17 +220,17 @@ function añadiendolo() {
 };
 
 //TODO Speed to move 
-function moveMole() {
-    setInterval(añadiendolo, 1000)
-}
+// function moveMole() {
+//     setInterval(añadiendolo, 1000)
+// }
 
 //TODO click events
 Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", () => {
         if (cuadrado.classList[1] == "oso") {
             score++
-            nivel--
-            Dificultad(nivel)
+            nivel++
+            Dificultad(nivel,50,1500)
             console.log(nivel)
             userScore.innerHTML = score
             stopTimeBar()

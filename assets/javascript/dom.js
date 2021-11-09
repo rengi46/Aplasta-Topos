@@ -11,7 +11,7 @@ let jon
 
 let score=0
 let life=3
-var nivel= 10;
+var nivel = 0;
 let userScore= document.getElementById('userScore')
 
 const Cuadrado=document.querySelectorAll(".hueco")
@@ -25,11 +25,11 @@ function añadiendolo(){
   // prueba = Cajaaleatoria.id
 };
 
-function moveMole() {
-  setInterval(añadiendolo, 1000)
-}
+// function moveMole() {
+//   setInterval(añadiendolo, 1000)
+// }
 
-moveMole()
+// moveMole()
 function Hide() {
   Start.style.display="none";
   First.style.display="block";
