@@ -40,6 +40,8 @@ function youwin() {
     modalContent[0].appendChild(newP("Try again"))
     modalContent[0].appendChild(newButton())
     openModal()
+}
+
 function start() {
     Hide()
     TimeBar()
@@ -190,6 +192,7 @@ Cuadrado.forEach(cuadrado => {
         }
     });
 });
+
 function lives(life){
     if(life==3){lvl.style.backgroundImage="url(/assets/img/3vidas.png)"}
     else if(life==2){lvl.style.backgroundImage="url(/assets/img/2vida.png)"}
@@ -203,6 +206,3 @@ function resetGame(){
     score= 0
     userScore.innerHTML = score
 }
-// function addLive(){
-//     lvl.style.backgroundImage="url(/assets/img/3vidas.png)
-// }
