@@ -14,11 +14,6 @@ let userScore= document.getElementById('userScore')
 
 const Cuadrado=document.querySelectorAll(".hueco")
 
-function Hide() {
-  Start.style.display="none";
-  First.style.display="block";
-  }
-
 //TODO Dom Modal window
 const modal = document.getElementById("myModal");
 const span = document.getElementsByClassName("close")[0];
@@ -30,3 +25,9 @@ const Tprogres=document.getElementById("Tprogres")
 
 
 
+
+
+// function Hide() {
+//   Start.style.display="none";
+//   First.style.display="block";
+//   }
