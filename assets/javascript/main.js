@@ -40,6 +40,21 @@ function youwin() {
     modalContent[0].appendChild(newP("Try again"))
     modalContent[0].appendChild(newButton())
     openModal()
+function start() {
+    Hide()
+    TimeBar()
+    Tprogres.classList.toggle("timeOut")
+    poneruser()
+}
+
+function poneruser(){
+    const inputname= document.getElementById("userInput")
+    const user=createUser(inputname.value)
+    var arruser=(JSON.parse(save.aplastaTopos));
+    console.log(arruser)
+    var objuser=arruser[user]
+    console.log(objuser)
+    user_box.innerText=objuser.nameUser
 }
 
 //TODO modal open

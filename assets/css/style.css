@@ -20,6 +20,7 @@
     background-color: red;
     color: white;
     text-align: center;
+    margin: 15px;
 }
 .score>div{
     font-size: larger;
@@ -35,8 +36,11 @@
 }
 .user_box{
     height: 50px;
-    width: 40%;
-    border: 1px solid;
+    width: 30%;
+    
+    color: white;
+    font-size: 2em;
+    text-align: center;
 
 }
 .time_bar{
@@ -132,10 +136,6 @@
     outline: none;
     border: 3px solid black;
     border-radius:5px;
-}
-
-.score{
-
 }
 
 .Tbar{
