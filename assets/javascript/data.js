@@ -1,13 +1,4 @@
 
-//To begin the game
-// const Start=document.getElementById("first_page")
-// const First=document.getElementById("container1")
-// const butStart=document.getElementById("Next_page")
-// const Cuadrado=document.querySelectorAll(".hueco")
-// const oso=document.querySelector(".oso")
-// let score=0
-// let life=3
-
 var startTime;
 var afterTime;
 
@@ -35,12 +26,10 @@ if(rep==0){
         nameUser: name,
         scoreUser:0
     }
-    console.log("A")
     guardar(newobj)
     return arr.length-1
 }
 else if(rep!=0){
-    console.log("B")
     return rep
 }
 
@@ -72,7 +61,7 @@ function winersScore(){
         var three=document.createElement("li")
         arrlocal.sort((a,b)=>{return a.scoreUser-b.scoreUser})
         arrlocal.forEach((e) => {
-            console.log(`${e.nameUser} ${e.scoreUser}`);
+            // console.log(`${e.nameUser} ${e.scoreUser}`);
         });
     }
 
