@@ -1,4 +1,14 @@
 
+function abrirModal(){
+    nuevoModal.style.visibility="visible"
+    setTimeout(()=>{
+        imgModal.src="/assets/img/go.jpg"
+        setTimeout(()=>{
+            EsconderModal()
+            TimeBar()
+        },1000)
+    },1000)
+}
 
 function start() {
     startTime = new Date
@@ -62,13 +72,6 @@ function añadiendolo() {
         esconder("oso")
     }
 
-    
-
-    // Cajaaleatoria.classList.add("ososal")
-    // setTimeout(()=>{
-    //     Cajaaleatoria.classList.remove("ososal")
-    //     Cajaaleatoria.classList.add("oso")
-    // },300)
 };
 
 function topo(a)
@@ -145,7 +148,7 @@ function casco(a){
         a.classList.add("cascoOso")
         // a.classList.add("oso")
     },200)
-
+}
 function aplastabomba(a){
     a.classList.remove("bomb")
     clearInterval(moveSpeed)
@@ -203,13 +206,3 @@ function EsconderModal() {
     nuevoModal.style.visibility="hidden"
 }
 
-function abrirModal(){
-    nuevoModal.style.visibility="visible"
-    setTimeout(()=>{
-        imgModal.src="/assets/img/go.jpg"
-        setTimeout(()=>{
-            EsconderModal()
-            TimeBar()
-        },1000)
-    },1000)
-}}
