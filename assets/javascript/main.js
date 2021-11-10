@@ -48,7 +48,7 @@ function TimeBar() {
         Dificultad(score)
         var Despues = new Date
         // console.log(Despues.getTime() - antes.getTime())
-    }, 10000)
+    }, 5000)
 }
 
 //TODO stop Time Bar
@@ -62,7 +62,7 @@ function Dificultad(nivel=0, time = 50, max = 1000) {
     const c = nivel * time
     const d = max - c
     moveSpeed = setInterval(()=>{
-        console.log(d)
+        //console.log(d)
         añadiendolo()}, d)
 }
 
@@ -127,7 +127,7 @@ function lives(life) {
 }
 
 function resetGame() {
-    console.log("reset")
+    //console.log("reset")
     stopTimeBar()
     lives(3)
     life = 3
