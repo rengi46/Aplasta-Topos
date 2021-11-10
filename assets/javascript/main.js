@@ -40,8 +40,6 @@ function next() {
     startTime = new Date
     TimeBar()
     closeModal()
-    Dificultad(score)
-    //Dificultad(score, 50, 1000)
 }
 
 //TODO Run time Bar
@@ -68,7 +66,9 @@ function stopTimeBar() {
 function Dificultad(nivel=0, time = 50, max = 1000) {
     const c = nivel * time
     const d = max - c
-    moveSpeed = setInterval(añadiendolo, d)
+    moveSpeed = setInterval(()=>{
+        console.log(d)
+        añadiendolo()}, d)
 }
 
 function añadiendolo() {
@@ -111,11 +111,11 @@ Cuadrado.forEach(cuadrado => {
             life--
             lives(life)
         } else if (life == 1) {
-            
             cleanModal()
             addUser()
             yourloose("You Don't have move Lives")
             resetGame()
+            Dificultad(score)
             modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
         }
     });
