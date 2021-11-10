@@ -2,7 +2,7 @@
 function abrirModal(){
     nuevoModal.style.visibility="visible"
     setTimeout(()=>{
-        imgModal.src="/assets/img/go.jpg"
+        imgModal.src="/assets/img/go.png"
         setTimeout(()=>{
             EsconderModal()
             TimeBar()
@@ -48,7 +48,7 @@ function stopTimeBar() {
 
 function Dificultad(nivel=0, time = 50, max = 1000) {
     const d = max - (nivel*time)
-    var moveSpeed = setInterval(()=>{
+    moveSpeed = setInterval(()=>{
         console.log(nivel)
         añadiendolo()}, d)
 }
