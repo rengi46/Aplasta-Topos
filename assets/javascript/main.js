@@ -1,4 +1,14 @@
 
+function abrirModal(){
+    nuevoModal.style.visibility="visible"
+    setTimeout(()=>{
+        imgModal.src="/assets/img/go.jpg"
+        setTimeout(()=>{
+            EsconderModal()
+            TimeBar()
+        },1000)
+    },1000)
+}
 
 function start() {
     startTime = new Date
@@ -59,13 +69,6 @@ function añadiendolo() {
         bomb(Cajaaleatoria)
     }
 
-    
-
-    // Cajaaleatoria.classList.add("ososal")
-    // setTimeout(()=>{
-    //     Cajaaleatoria.classList.remove("ososal")
-    //     Cajaaleatoria.classList.add("oso")
-    // },300)
 };
 
 function topo(a)
@@ -143,7 +146,7 @@ function casco(a){
         a.classList.add("cascoOso")
         // a.classList.add("oso")
     },200)
-
+}
 function aplastabomba(a){
     a.classList.remove("bomb")
     clearInterval(moveSpeed)
@@ -156,24 +159,8 @@ function aplastabomba(a){
         resetGame()
     },1000)
 }
-// function cascoT(){
-//     Cuadrado.forEach(cuadrado => {
-//         cuadrado.classList.remove("cascoBajando")
-//         if(cuadrado.classList[1]==a){
-//             cuadrado.classList.remove(a)
-//             cuadrado.classList.add("cascoBajando")
-//             setTimeout(()=>{
-//                 cuadrado.classList.remove("cascoBajando")
-//             },100)
-//         }
-//     })
-// }
-// function aplastacasco(a){
 
-//     a.classList.remove("cascoOso")
-//     a.classList.add("cascoBajando")
-    
-// }
+
 
 
 function lives(life) {
@@ -219,13 +206,3 @@ function EsconderModal() {
     nuevoModal.style.visibility="hidden"
 }
 
-function abrirModal(){
-    nuevoModal.style.visibility="visible"
-    setTimeout(()=>{
-        imgModal.src="/assets/img/go.jpg"
-        setTimeout(()=>{
-            EsconderModal()
-            TimeBar()
-        },1000)
-    },1000)
-}}
