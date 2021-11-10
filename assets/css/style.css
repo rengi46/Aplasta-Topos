@@ -101,6 +101,28 @@
 }
 
 
+.bomb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 139px;
+    background-image: url(/assets/img/bomba.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0px 12px;
+}
+.explo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 139px;
+    background-image: url(/assets/img/explosion.jpg);
+    background-repeat: no-repeat;
+}
+
+
 
 /* modal prueba */
 .centramelo{

@@ -25,7 +25,7 @@ function TimeBar() {
         Dificultad(score)
         var Despues = new Date
         // console.log(Despues.getTime() - antes.getTime())
-    }, 10000)
+    }, 20000)
 }
 
 //TODO stop Time Bar
@@ -36,8 +36,7 @@ function stopTimeBar() {
 
 
 function Dificultad(nivel=0, time = 50, max = 1000) {
-    const c = nivel * time
-    const d = max - c
+    const d = max - (nivel*time)
     moveSpeed = setInterval(()=>{
         añadiendolo()}, d)
 }
@@ -57,8 +56,7 @@ function añadiendolo() {
     }
     else if(personaje>8){
         console.log("bomba")
-        topo(Cajaaleatoria)
-        esconder("oso")
+        bomb(Cajaaleatoria)
     }
 
     
@@ -91,12 +89,22 @@ function esconder(a){
         }
     })
 }
+
+function bomb(a){
+    const d = 1000 - (score*50)
+    a.classList.add("bomb")
+    setTimeout(()=>{a.classList.remove("bomb")},d)
+}
+
 //TODO click events
 Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", () => {
         if (cuadrado.classList[1] == "oso") {
             aplastaoso(cuadrado)
-
+        }
+        else if(cuadrado.classList[1] == "bomb"){
+            aplastabomba(cuadrado)
+        
             //console.log(score)
         } 
         else if (life > 1) {
@@ -135,6 +143,18 @@ function casco(a){
         a.classList.add("cascoOso")
         // a.classList.add("oso")
     },200)
+
+function aplastabomba(a){
+    a.classList.remove("bomb")
+    clearInterval(moveSpeed)
+    stopTimeBar()
+    a.classList.add("explo")
+    setTimeout(()=>{
+        a.classList.remove("explo")
+        cleanModal()
+        yourloose("Te exploto en toda la cara")
+        resetGame()
+    },1000)
 }
 // function cascoT(){
 //     Cuadrado.forEach(cuadrado => {
@@ -208,4 +228,4 @@ function abrirModal(){
             TimeBar()
         },1000)
     },1000)
-}
+}}
