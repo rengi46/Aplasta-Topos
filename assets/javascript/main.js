@@ -25,7 +25,7 @@ function TimeBar() {
         Dificultad(score)
         var Despues = new Date
         // console.log(Despues.getTime() - antes.getTime())
-    }, 10000)
+    }, 20000)
 }
 
 //TODO stop Time Bar
@@ -36,8 +36,7 @@ function stopTimeBar() {
 
 
 function Dificultad(nivel=0, time = 50, max = 1000) {
-    const c = nivel * time
-    const d = max - c
+    const d = max - (nivel*time)
     moveSpeed = setInterval(()=>{
         añadiendolo()}, d)
 }
@@ -46,20 +45,20 @@ function añadiendolo() {
     Cajaaleatoria = Cuadrado[Math.floor(Math.random() * 12)]
     var personaje = Math.floor(Math.random() * 10)
     console.log(personaje)
-    if(personaje<6){
+    if(personaje<3){
         console.log("topo")
         topo(Cajaaleatoria)
         esconder("oso")
     }
-    else if(personaje>5 && personaje<9){
-        console.log("casco")
-        topo(Cajaaleatoria)
+    // else if(personaje>5 && personaje<9){
+    //     console.log("casco")
+    //     topo(Cajaaleatoria)
+    //     esconder("oso")
+    // }
+    if(personaje>2){
         esconder("oso")
-    }
-    else if(personaje>8){
         console.log("bomba")
-        topo(Cajaaleatoria)
-        esconder("oso")
+        bomb(Cajaaleatoria)
     }
 
     
@@ -92,12 +91,22 @@ function esconder(a){
         }
     })
 }
+
+function bomb(a){
+    const d = 1000 - (score*50)
+    a.classList.add("bomb")
+    setTimeout(()=>{a.classList.remove("bomb")},d)
+}
+
 //TODO click events
 Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", () => {
         if (cuadrado.classList[1] == "oso") {
             aplastaoso(cuadrado)
-
+        }
+        else if(cuadrado.classList[1] == "bomb"){
+            aplastabomba(cuadrado)
+        
             //console.log(score)
         } else if (life > 1) {
             life--
@@ -131,8 +140,17 @@ function aplastaoso(a){
 function aplastacasco(){
 
 }
-function aplastabomba(){
-
+function aplastabomba(a){
+    a.classList.remove("bomb")
+    clearInterval(moveSpeed)
+    stopTimeBar()
+    a.classList.add("explo")
+    setTimeout(()=>{
+        a.classList.remove("explo")
+        cleanModal()
+        yourloose("Te exploto en toda la cara")
+        resetGame()
+    },1000)
 }
 
 
