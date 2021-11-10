@@ -44,19 +44,22 @@ function Dificultad(nivel=0, time = 50, max = 1000) {
 function añadiendolo() {
     Cajaaleatoria = Cuadrado[Math.floor(Math.random() * 12)]
     var personaje = Math.floor(Math.random() * 10)
-    console.log(personaje)
-    if(personaje<3){
-        console.log("topo")
+    if(personaje< 6){
         topo(Cajaaleatoria)
         esconder("oso")
+        esconder("cascoOso")
+
     }
-    else if(personaje>2 ){
+    else if(personaje> 5 && personaje < 9){
         casco(Cajaaleatoria)
         esconder("cascoOso")
+        esconder("oso")
+
     }
-    else if(personaje>8){
-        console.log("bomba")
+    else if(personaje > 8){
         bomb(Cajaaleatoria)
+        esconder("cascoOso")
+        esconder("oso")
     }
 
     
@@ -70,7 +73,6 @@ function añadiendolo() {
 
 function topo(a)
 {
-    console.log(a)
     a.classList.add("ososal")
     setTimeout(()=>{
         a.classList.remove("ososal")
@@ -156,24 +158,7 @@ function aplastabomba(a){
         resetGame()
     },1000)
 }
-// function cascoT(){
-//     Cuadrado.forEach(cuadrado => {
-//         cuadrado.classList.remove("cascoBajando")
-//         if(cuadrado.classList[1]==a){
-//             cuadrado.classList.remove(a)
-//             cuadrado.classList.add("cascoBajando")
-//             setTimeout(()=>{
-//                 cuadrado.classList.remove("cascoBajando")
-//             },100)
-//         }
-//     })
-// }
-// function aplastacasco(a){
 
-//     a.classList.remove("cascoOso")
-//     a.classList.add("cascoBajando")
-    
-// }
 
 
 function lives(life) {
@@ -184,7 +169,6 @@ function lives(life) {
 }
 
 function resetGame() {
-    console.log("reset")
     stopTimeBar()
     lives(3)
     life = 3
