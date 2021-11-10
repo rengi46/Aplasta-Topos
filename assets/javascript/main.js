@@ -1,3 +1,6 @@
+
+
+
 //TODO modal window
 
 // function modalText(text) {
@@ -47,26 +50,24 @@ function youwin() {
 }
 
 //TODO start Game and time
-// function start() {
-//     startTime = new Date
-//     closeModal()
-//     TimeBar()
-//     Tprogres.classList.toggle("timeOut")
-// }
+
 
 function start() {
     startTime=new Date
     TimeBar()
     poneruser()
     closeModal()
-
+    apocalipsis = 0
+    Dificultad(apocalipsis)
 }
 
 function next(){
     startTime=new Date
     TimeBar()
     closeModal()
+    Dificultad(apocalipsis)
 }
+
 
 function poneruser(){
     const inputname= document.getElementById("userInput")
@@ -85,13 +86,13 @@ function poneruser(){
 function addScore(name){
     const user=createUser(name)
     var arruser=(JSON.parse(save.aplastaTopos));
-    console.log(arruser)
+    //console.log(arruser)
     var objuser=arruser[user]
     objuser.userScore= finalScore;
     arruser[user]=objuser
-    console.log(arruser)
+    // console.log(arruser)
     arrayString= (JSON.stringify(arruser))
-    console.log(arrayString)
+    // console.log(arrayString)
     save.aplastaTopos= arrayString;
 }
 
@@ -168,47 +169,10 @@ function newButton(name = 'Start', func ) {
 
 
 
-//TODO Run time Bar
-function TimeBar() {
-    var antes = new Date
-    Tprogres.classList.add("timeOut")
-    gameTime= setTimeout(function () {
-        cleanModal()
-        yourloose('Your time Finished')
-        modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
-        resetGame()
-        var Despues = new Date
-        // console.log(Despues.getTime() - antes.getTime())
-    }, 3000)
-}
 
-//TODO stop Time Bar
-function stopTimeBar(){
-    clearTimeout(gameTime)
-    Tprogres.classList.remove("timeOut")
-}
 
 
 //TODO Start to create and move mole
-// function yourloose() {
-//     modalContent[0].appendChild(newh2('Welcome'))
-//     modalContent[0].appendChild(newP('Insert Your User Name'))
-//     modalContent[0].appendChild(newInput())
-//     modalContent[0].appendChild(newButton())
-//     openModal()
-// }
-
-
-// function youwin() {
-//     //afterTime = new Date
-//     finalTime()
-//     console.log(finalTime())
-//     modalContent[0].appendChild(newP('You win'))
-//     // modalContent[0].appendChild(newP('try again'))
-//     // modalContent[0].appendChild(newInput())
-//     modalContent[0].appendChild(newButton("Try again"))
-//     openModal()
-// }
 
 
 function finalTime(){
@@ -217,64 +181,7 @@ function finalTime(){
     return contTimer;
 }
 
-function Dificultad(nivel=0,time=50,max=1000){
-    const c=nivel*time
-    const d=max-c
-    setInterval(
-        function(){
-            añadiendolo()
-            console.log(score)
-            console.log(d)
-        }, d)
-}
 
-function añadiendolo() {
-    console.log("1")
-    Cuadrado.forEach(cuadrado => {
-        cuadrado.classList.remove("oso")
-    })
-    Cajaaleatoria = Cuadrado[Math.floor(Math.random() * 12)]
-    Cajaaleatoria.classList.add('oso')
-};
-
-//TODO Speed to move 
-// function moveMole() {
-//     setInterval(añadiendolo, 1000)
-// }
-
-function resetTimeBar(){
-    Tprogres.classList.remove("timeOut")
-}
-
-
-//TODO click events
-Cuadrado.forEach(cuadrado => {
-    cuadrado.addEventListener("click", () => {
-        if (cuadrado.classList[1] == "oso") {
-            score++
-            // Dificultad(score,50,1000)
-            console.log(score)
-            userScore.innerHTML = score
-            stopTimeBar()
-            cleanModal()
-            yourTime(finalTime()/1000)
-            resetTimeBar()
-            playerScore()
-            //console.log(score)
-        } else if (life > 1) {
-            life--
-            lives(life)
-
-        } else if (life == 1) {
-            stopTimeBar()
-            cleanModal()
-            yourloose("You Don't have move Lives")
-            modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
-            resetGame()
-        }
-    });
-});
-Dificultad(score,50,1000)
 
 
 function lives(life){
@@ -285,7 +192,7 @@ function lives(life){
 }
 
 function resetGame(){
-    resetTimeBar()
+    stopTimeBar()
     lives(3)
     life = 3
     score= 0

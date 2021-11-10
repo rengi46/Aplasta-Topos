@@ -3,21 +3,25 @@
 const Start=document.getElementById("first_page")
 const First=document.getElementById("container1")
 const butStart=document.getElementById("Next_page")
-const oso=document.querySelector(".oso")
+
+//status
 const lvl=document.getElementById("lvl")
 const user_box=document.getElementById("user_box")
-var save=window.localStorage;
-let jon
-
-let score=0
 let userScore= document.getElementById('userScore')
 
+//topos
+const oso=document.querySelector(".oso")
 const Cuadrado=document.querySelectorAll(".hueco")
 
-function Hide() {
-  Start.style.display="none";
-  First.style.display="block";
-  }
+//variables
+var save=window.localStorage;
+let jon
+var on=0
+let score=0
+let life =3
+var apocalipsis=0
+var gameTime
+
 
 //TODO Dom Modal window
 const modal = document.getElementById("myModal");
