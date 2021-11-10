@@ -26,8 +26,6 @@ function yourloose(text = 'You Lose') {
     modalContent[0].appendChild(newButton('New User', 'modalStart()'))
     //winersScore()
     openModal()
-    addUser()
-    addScore(user_box.value)
 }
 
 //TODO Display modal Time

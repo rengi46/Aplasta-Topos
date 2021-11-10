@@ -17,7 +17,7 @@ function loadUser() {
 username= document.getElementById('userInput')
 
 function addUser() {
-    console.log(user_box.value)
+    //console.log(user_box.value)
     var obj = user(user_box.value, finalScore);
     userBook.push(obj);
 
