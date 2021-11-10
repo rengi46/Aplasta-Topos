@@ -24,9 +24,12 @@ function yourloose(text = 'You Lose') {
     modalContent[0].appendChild(newH2(text))
     modalContent[0].appendChild(newP("Try again"))
     modalContent[0].appendChild(newButton('Try again', 'next()'))
+    modalContent[0].appendChild(newButton('Display Scores', 'showScores(topTen)'))
     modalContent[0].appendChild(newButton('New User', 'modalStart()'))
     //winersScore()
     //addUser()
+    orderBook()
+    console.log(orderUserBook)
     openModal()
 }
 
@@ -72,11 +75,11 @@ span.onclick = function () {
 }
 
 //TODO clicks anywhere outside of the modal, close it
-// window.onclick = function (event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//     }
-// }
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 //TODO open modal start
 window.onload = function () {

@@ -167,3 +167,9 @@ function calculateScore() {
     finalScore = (maxtime - scoreResult) / 1000
     return finalScore
 };
+
+//TODO display score list
+function displayScore(){
+    console.log(orderUserBook)
+    showScores(orderUserBook)
+}

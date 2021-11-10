@@ -181,3 +181,25 @@
 
 }
 
+#tableDiv{
+    visibility: none;
+    display: grid;
+}
+table{
+    border: 1px solid;
+    grid-template-columns: 1fr 1fr;
+}
+th{
+    border: 1px solid;
+}
+tr{
+    border: 1px solid;
+    text-align: center;
+}
+td{
+    border: 1px solid;
+}
+
+#scoreTable{
+    /*visibility: hidden;*/
+} 
