@@ -15,11 +15,13 @@ function loadUser() {
 }
 
 username= document.getElementById('userInput')
+
 function addUser() {
-    var obj = user(username.value, finalScore);
+    console.log(user_box.value)
+    var obj = user(user_box.value, finalScore);
     userBook.push(obj);
 
-    localStorage.setItem('userBook', JSON.stringify('userBook'))
+    localStorage.setItem('userBook', JSON.stringify(userBook))
 }
 
 function findUser() {
