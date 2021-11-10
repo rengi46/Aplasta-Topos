@@ -45,6 +45,7 @@ function TimeBar() {
         yourloose('Your time Finished')
         modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
         resetGame()
+        Dificultad(score)
         var Despues = new Date
         // console.log(Despues.getTime() - antes.getTime())
     }, 10000)
