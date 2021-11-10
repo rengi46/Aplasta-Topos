@@ -163,9 +163,10 @@
     width: 0px;
     border-radius: 15px;
     background-color: red;
-    transition: width 3s;
 }
 .timeOut{
+    transition: width 3s;
     width: 375px;
+
 }
 

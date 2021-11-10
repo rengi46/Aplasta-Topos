@@ -1,12 +1,3 @@
-//TODO modal window
-
-// function modalText(text) {
-//     pOne = document.createElement('p')
-//     pOne.innerHTML = text
-//     modalContent[0].appendChild(pOne)
-//     modalContent[0].appendChild(newButton())
-//     openModal()
-// }
 
 //TODO Display modal Start
 function modalStart() {
@@ -46,14 +37,6 @@ function youwin() {
     openModal()
 }
 
-//TODO start Game and time
-// function start() {
-//     startTime = new Date
-//     closeModal()
-//     TimeBar()
-//     Tprogres.classList.toggle("timeOut")
-// }
-
 function start() {
     startTime=new Date
     TimeBar()
@@ -77,11 +60,6 @@ function poneruser(){
     // console.log(objuser)
     user_box.innerText=objuser.nameUser
 }
-
-// setTimeout(function () {
-//     console.log(After.getTime() - startTime.getTime())
-// }, 10000)
-
 function addScore(name){
     const user=createUser(name)
     var arruser=(JSON.parse(save.aplastaTopos));
@@ -179,7 +157,7 @@ function TimeBar() {
         resetGame()
         var Despues = new Date
         // console.log(Despues.getTime() - antes.getTime())
-    }, 3000)
+    }, 10000)
 }
 
 //TODO stop Time Bar
@@ -187,28 +165,6 @@ function stopTimeBar(){
     clearTimeout(gameTime)
     Tprogres.classList.remove("timeOut")
 }
-
-
-//TODO Start to create and move mole
-// function yourloose() {
-//     modalContent[0].appendChild(newh2('Welcome'))
-//     modalContent[0].appendChild(newP('Insert Your User Name'))
-//     modalContent[0].appendChild(newInput())
-//     modalContent[0].appendChild(newButton())
-//     openModal()
-// }
-
-
-// function youwin() {
-//     //afterTime = new Date
-//     finalTime()
-//     console.log(finalTime())
-//     modalContent[0].appendChild(newP('You win'))
-//     // modalContent[0].appendChild(newP('try again'))
-//     // modalContent[0].appendChild(newInput())
-//     modalContent[0].appendChild(newButton("Try again"))
-//     openModal()
-// }
 
 
 function finalTime(){
@@ -229,12 +185,21 @@ function Dificultad(nivel=0,time=50,max=1000){
 }
 
 function añadiendolo() {
-    console.log("1")
     Cuadrado.forEach(cuadrado => {
-        cuadrado.classList.remove("oso")
+        if(cuadrado.classList[1]=="oso"){
+            cuadrado.classList.remove("oso")
+            cuadrado.classList.add("ososal")
+            setTimeout(()=>{
+                cuadrado.classList.remove("ososal")
+            },100)
+        }
     })
     Cajaaleatoria = Cuadrado[Math.floor(Math.random() * 12)]
-    Cajaaleatoria.classList.add('oso')
+    Cajaaleatoria.classList.add("ososal")
+    setTimeout(()=>{
+        Cajaaleatoria.classList.remove("ososal")
+        Cajaaleatoria.classList.add("oso")
+    },300)
 };
 
 //TODO Speed to move 
