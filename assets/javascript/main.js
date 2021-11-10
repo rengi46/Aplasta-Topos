@@ -23,11 +23,9 @@
 function start() {
     startTime = new Date
     TimeBar()
-    
-    //addUser()
-    //!poneruser()
     closeModal()
     Dificultad(score)
+    
 }
 
 function next() {
