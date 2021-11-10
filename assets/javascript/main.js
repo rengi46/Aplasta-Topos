@@ -1,24 +1,4 @@
 
-// function poneruser() {
-//     const inputname = document.getElementById("userInput")
-//     const user = createUser(inputname.value)
-//     var arruser = (JSON.parse(save.aplastaTopos));
-//     // console.log(arruser)
-//     var objuser = arruser[user]
-//     // console.log(objuser)
-//     user_box.innerText = objuser.nameUser
-// }
-
-// function addScore(name) {
-//     const user = {nameUser: name}
-//     user.scoreUser = finalScore;
-//     var arruser = (JSON.parse(save.aplastaTopos));
-//     arruser.push(user)
-//     console.log(arruser)
-//     arrayString = (JSON.stringify(arruser))
-//     save.aplastaTopos = arrayString;
-// }
-
 
 function start() {
     startTime = new Date
@@ -59,15 +39,30 @@ function Dificultad(nivel=0, time = 50, max = 1000) {
     const c = nivel * time
     const d = max - c
     moveSpeed = setInterval(()=>{
-        console.log(d)
         añadiendolo()}, d)
 }
 
 function añadiendolo() {
-   
     Cajaaleatoria = Cuadrado[Math.floor(Math.random() * 12)]
-    topo(Cajaaleatoria)
-    esconder()
+    var personaje = Math.floor(Math.random() * 10)
+    console.log(personaje)
+    if(personaje<6){
+        console.log("topo")
+        topo(Cajaaleatoria)
+        esconder("oso")
+    }
+    else if(personaje>5 && personaje<9){
+        console.log("casco")
+        topo(Cajaaleatoria)
+        esconder("oso")
+    }
+    else if(personaje>8){
+        console.log("bomba")
+        topo(Cajaaleatoria)
+        esconder("oso")
+    }
+
+    
 
     // Cajaaleatoria.classList.add("ososal")
     // setTimeout(()=>{
@@ -85,11 +80,11 @@ function topo(a)
         a.classList.add("oso")
     },200)
 }
-function esconder(){
+function esconder(a){
     Cuadrado.forEach(cuadrado => {
         cuadrado.classList.remove("ososal")
-        if(cuadrado.classList[1]=="oso"){
-            cuadrado.classList.remove("oso")
+        if(cuadrado.classList[1]==a){
+            cuadrado.classList.remove(a)
             cuadrado.classList.add("ososal")
             setTimeout(()=>{
                 cuadrado.classList.remove("ososal")
@@ -101,18 +96,7 @@ function esconder(){
 Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", () => {
         if (cuadrado.classList[1] == "oso") {
-            score++
-            userScore.innerHTML = score
-            clearInterval(moveSpeed)
-            stopTimeBar()
-            cuadrado.classList.add("osoaplastado")
-            setTimeout(()=>{
-                cuadrado.classList.remove("osoaplastado")
-                Dificultad(score)
-                cleanModal()
-                yourTime(finalTime() / 1000)
-                playerScore()
-            },1000)
+            aplastaoso(cuadrado)
 
             //console.log(score)
         } else if (life > 1) {
@@ -128,6 +112,28 @@ Cuadrado.forEach(cuadrado => {
     });
 });
 
+
+function aplastaoso(a){
+    score++
+    userScore.innerHTML = score
+    clearInterval(moveSpeed)
+    stopTimeBar()
+    a.classList.add("osoaplastado")
+    setTimeout(()=>{
+        a.classList.remove("osoaplastado")
+        Dificultad(score)
+        cleanModal()
+        yourTime(finalTime() / 1000)
+        playerScore()
+    },1000)
+}
+
+function aplastacasco(){
+
+}
+function aplastabomba(){
+
+}
 
 
 function lives(life) {
