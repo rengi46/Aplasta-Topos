@@ -6,7 +6,7 @@ const butStart = document.getElementById("Next_page")
 const oso = document.querySelector(".oso")
 const lvl = document.getElementById("lvl")
 const user_box = document.getElementById("user_box")
-const userName = document.getElementById("user_box")
+//const userName = document.getElementById("user_box")
 var save = window.localStorage;
 let jon
 

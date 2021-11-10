@@ -17,7 +17,10 @@ function loadUser() {
 username= document.getElementById('userInput')
 
 function addUser() {
-    var obj = user(user_box.value, finalScore);
+    calculateScore()
+    nameUser= user_box.textContent
+    console.log(nameUser)
+    var obj = user(nameUser, finalScore);
     console.log(obj)
     userBook.push(obj);
 
@@ -26,7 +29,7 @@ function addUser() {
 
 function findUser() {
     result = userBook.filter( user=> {
-        return 
+        return
     })
 }
 window.onload

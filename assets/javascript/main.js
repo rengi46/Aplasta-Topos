@@ -67,7 +67,7 @@ function Dificultad(nivel=0, time = 50, max = 1000) {
     const c = nivel * time
     const d = max - c
     moveSpeed = setInterval(()=>{
-        console.log(d)
+        //console.log(d)
         añadiendolo()}, d)
 }
 
