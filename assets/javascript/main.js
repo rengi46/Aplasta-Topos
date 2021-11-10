@@ -93,7 +93,9 @@ Cuadrado.forEach(cuadrado => {
             userScore.innerHTML = score
             clearInterval(moveSpeed)
             stopTimeBar()
+            cuadrado.classList.add("osoaplastado")
             setTimeout(()=>{
+                cuadrado.classList.remove("osoaplastado")
                 Dificultad(score)
                 cleanModal()
                 yourTime(finalTime() / 1000)
