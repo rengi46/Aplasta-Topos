@@ -64,8 +64,30 @@ function Dificultad(nivel=0, time = 50, max = 1000) {
 }
 
 function añadiendolo() {
-    //console.log("1")
+   
+    Cajaaleatoria = Cuadrado[Math.floor(Math.random() * 12)]
+    topo(Cajaaleatoria)
+    esconder()
+
+    // Cajaaleatoria.classList.add("ososal")
+    // setTimeout(()=>{
+    //     Cajaaleatoria.classList.remove("ososal")
+    //     Cajaaleatoria.classList.add("oso")
+    // },300)
+};
+
+function topo(a)
+{
+    console.log(a)
+    a.classList.add("ososal")
+    setTimeout(()=>{
+        a.classList.remove("ososal")
+        a.classList.add("oso")
+    },200)
+}
+function esconder(){
     Cuadrado.forEach(cuadrado => {
+        cuadrado.classList.remove("ososal")
         if(cuadrado.classList[1]=="oso"){
             cuadrado.classList.remove("oso")
             cuadrado.classList.add("ososal")
@@ -74,15 +96,7 @@ function añadiendolo() {
             },100)
         }
     })
-    Cajaaleatoria = Cuadrado[Math.floor(Math.random() * 12)]
-    Cajaaleatoria.classList.add("ososal")
-    setTimeout(()=>{
-        Cajaaleatoria.classList.remove("ososal")
-        Cajaaleatoria.classList.add("oso")
-    },300)
-};
-
-
+}
 //TODO click events
 Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", () => {
