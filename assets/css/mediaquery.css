@@ -1,0 +1,19 @@
+@media screen and (min-width: 440px){
+    #grid_hueco{
+        /* display: flex;
+        flex-wrap: wrap;
+        -ms-flex-align: center; */
+    
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr 1fr ;
+        grid-template-rows:1fr 1fr 1fr 1fr  ;
+       
+        align-items: center;
+        align-content: center;
+    }
+    .timeOut{
+        transition: width 3s;
+        width: 910px;
+    
+    }
+}
