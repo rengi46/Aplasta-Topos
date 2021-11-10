@@ -1,6 +1,6 @@
 function user(name = 'guest', score = 0){
     return{
-        name: name, 
+        name: name,
         score: score
     }
 }
@@ -17,8 +17,11 @@ function loadUser() {
 username= document.getElementById('userInput')
 
 function addUser() {
-    //console.log(user_box.value)
-    var obj = user(user_box.value, finalScore);
+    calculateScore()
+    nameUser= user_box.textContent
+    console.log(nameUser)
+    var obj = user(nameUser, finalScore);
+    console.log(obj)
     userBook.push(obj);
 
     localStorage.setItem('userBook', JSON.stringify(userBook))
@@ -26,7 +29,7 @@ function addUser() {
 
 function findUser() {
     result = userBook.filter( user=> {
-        return 
+        return
     })
 }
 window.onload

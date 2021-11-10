@@ -19,11 +19,17 @@
 //     save.aplastaTopos = arrayString;
 // }
 
+function printName() {
+    const inputname = document.getElementById("userInput")
+    let username= inputname.value;
+    user_box.innerText = username;
+}
+
 
 function start() {
     startTime = new Date
     TimeBar()
-    
+    printName()
     //addUser()
     //!poneruser()
     closeModal()
@@ -109,6 +115,7 @@ Cuadrado.forEach(cuadrado => {
             lives(life)
         } else if (life == 1) {
             cleanModal()
+            addUser()
             yourloose("You Don't have move Lives")
             resetGame()
             Dificultad(score)
