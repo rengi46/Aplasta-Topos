@@ -21,6 +21,7 @@ const span = document.getElementsByClassName("close")[0];
 const modalContent= document.getElementsByClassName('modal-content')
 //nuevo modal de Ready And go
 const nuevoModal= document.getElementById("nuevo_modal")
+const imgModal= document.querySelector(".imagentopo>img")
 
 
 //TODO time bar

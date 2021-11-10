@@ -22,10 +22,9 @@
 
 function start() {
     startTime = new Date
-    TimeBar()
     closeModal()
     Dificultad(score)
-    
+    abrirModal()
 }
 
 function next() {
@@ -138,7 +137,6 @@ function resetGame() {
 function finalTime() {
     afterTime = new Date
     contTimer = afterTime.getTime() - startTime.getTime()
-   
     return contTimer;
 }
 
@@ -156,11 +154,18 @@ function calculateScore() {
     return finalScore
 };
 
-// EsconderModal()
-// function EsconderModal() {
-//     nuevoModal.style.visibility="hidden"
-// }
 
-// function abrirModal(){
-//     nuevoModal.style.visibility="visible"
-// }
+function EsconderModal() {
+    nuevoModal.style.visibility="hidden"
+}
+
+function abrirModal(){
+    nuevoModal.style.visibility="visible"
+    setTimeout(()=>{
+        imgModal.src="/assets/img/go.jpg"
+        setTimeout(()=>{
+            EsconderModal()
+            TimeBar()
+        },1000)
+    },1000)
+}
