@@ -10,6 +10,7 @@
 
 //TODO Display modal Start
 function modalStart() {
+    userBook = loadUser()
     cleanModal()
     modalContent[0].appendChild(newH2('Welcome'))
     modalContent[0].appendChild(newP('Insert Your User Name'))
@@ -71,11 +72,11 @@ span.onclick = function () {
 }
 
 //TODO clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+// window.onclick = function (event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//     }
+// }
 
 //TODO open modal start
 window.onload = function () {

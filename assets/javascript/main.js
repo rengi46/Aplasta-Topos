@@ -19,6 +19,7 @@
 //     save.aplastaTopos = arrayString;
 // }
 
+
 function printName() {
     const inputname = document.getElementById("userInput")
     let username= inputname.value;
@@ -48,6 +49,7 @@ function TimeBar() {
     Tprogres.classList.add("timeOut")
     gameTime = setTimeout(function () {
         cleanModal()
+        addUser()
         yourloose('Your time Finished')
         modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
         resetGame()
@@ -75,6 +77,7 @@ function Dificultad(nivel=0, time = 50, max = 1000) {
 function añadiendolo() {
     //console.log("1")
     Cuadrado.forEach(cuadrado => {
+        cuadrado.classList.remove("ososal")
         if(cuadrado.classList[1]=="oso"){
             cuadrado.classList.remove("oso")
             cuadrado.classList.add("ososal")
@@ -88,7 +91,7 @@ function añadiendolo() {
     setTimeout(()=>{
         Cajaaleatoria.classList.remove("ososal")
         Cajaaleatoria.classList.add("oso")
-    },300)
+    },100)
 };
 
 
@@ -117,9 +120,9 @@ Cuadrado.forEach(cuadrado => {
             cleanModal()
             addUser()
             yourloose("You Don't have move Lives")
+            modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
             resetGame()
             Dificultad(score)
-            modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
         }
     });
 });

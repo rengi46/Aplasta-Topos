@@ -5,11 +5,9 @@ function user(name = 'guest', score = 0){
     }
 }
 
-var userBook
-
 function loadUser() {
     if(localStorage.getItem('userBook') == null){
-        return[]
+        return []
     }
     return JSON.parse(localStorage.getItem('userBook'))
 }
@@ -19,7 +17,6 @@ username= document.getElementById('userInput')
 function addUser() {
     calculateScore()
     nameUser= user_box.textContent
-    console.log(nameUser)
     var obj = user(nameUser, finalScore);
     console.log(obj)
     userBook.push(obj);
@@ -32,4 +29,4 @@ function findUser() {
         return
     })
 }
-window.onload
+
