@@ -70,10 +70,10 @@ function añadiendolo() {
     Cuadrado.forEach(cuadrado => {
         if(cuadrado.classList[1]=="oso"){
             cuadrado.classList.remove("oso")
-            // cuadrado.classList.add("ososal")
-            // setTimeout(()=>{
-            //     cuadrado.classList.remove("ososal")
-            // },100)
+            cuadrado.classList.add("ososal")
+            setTimeout(()=>{
+                cuadrado.classList.remove("ososal")
+            },100)
         }
     })
     Cajaaleatoria = Cuadrado[Math.floor(Math.random() * 12)]
