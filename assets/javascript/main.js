@@ -34,8 +34,6 @@ function next() {
     startTime = new Date
     TimeBar()
     closeModal()
-    Dificultad(score)
-    //Dificultad(score, 50, 1000)
 }
 
 //TODO Run time Bar
@@ -62,7 +60,9 @@ function stopTimeBar() {
 function Dificultad(nivel=0, time = 50, max = 1000) {
     const c = nivel * time
     const d = max - c
-    moveSpeed = setInterval(añadiendolo, d)
+    moveSpeed = setInterval(()=>{
+        console.log(d)
+        añadiendolo()}, d)
 }
 
 function añadiendolo() {
@@ -70,10 +70,10 @@ function añadiendolo() {
     Cuadrado.forEach(cuadrado => {
         if(cuadrado.classList[1]=="oso"){
             cuadrado.classList.remove("oso")
-            cuadrado.classList.add("ososal")
-            setTimeout(()=>{
-                cuadrado.classList.remove("ososal")
-            },100)
+            // cuadrado.classList.add("ososal")
+            // setTimeout(()=>{
+            //     cuadrado.classList.remove("ososal")
+            // },100)
         }
     })
     Cajaaleatoria = Cuadrado[Math.floor(Math.random() * 12)]
@@ -105,10 +105,10 @@ Cuadrado.forEach(cuadrado => {
             life--
             lives(life)
         } else if (life == 1) {
-            
             cleanModal()
             yourloose("You Don't have move Lives")
             resetGame()
+            Dificultad(score)
             modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
         }
     });
