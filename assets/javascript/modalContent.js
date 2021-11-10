@@ -80,3 +80,5 @@ window.onclick = function (event) {
 window.onload = function () {
     modalStart()
 }
+
+

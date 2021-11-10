@@ -155,3 +155,12 @@ function calculateScore() {
     finalScore = (maxtime - scoreResult) / 1000
     return finalScore
 };
+
+// EsconderModal()
+// function EsconderModal() {
+//     nuevoModal.style.visibility="hidden"
+// }
+
+// function abrirModal(){
+//     nuevoModal.style.visibility="visible"
+// }
