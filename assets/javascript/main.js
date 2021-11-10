@@ -46,15 +46,14 @@ function añadiendolo() {
     Cajaaleatoria = Cuadrado[Math.floor(Math.random() * 12)]
     var personaje = Math.floor(Math.random() * 10)
     console.log(personaje)
-    if(personaje<6){
+    if(personaje<3){
         console.log("topo")
         topo(Cajaaleatoria)
         esconder("oso")
     }
-    else if(personaje>5 && personaje<9){
-        console.log("casco")
-        topo(Cajaaleatoria)
-        esconder("oso")
+    else if(personaje>2 ){
+        casco(Cajaaleatoria)
+        esconder("cascoOso")
     }
     else if(personaje>8){
         console.log("bomba")
@@ -99,7 +98,8 @@ Cuadrado.forEach(cuadrado => {
             aplastaoso(cuadrado)
 
             //console.log(score)
-        } else if (life > 1) {
+        } 
+        else if (life > 1) {
             life--
             lives(life)
         } else if (life == 1) {
@@ -128,12 +128,32 @@ function aplastaoso(a){
     },1000)
 }
 
-function aplastacasco(){
-
+function casco(a){
+    a.classList.add("cascoBajando")
+    setTimeout(()=>{
+        a.classList.remove("cascoBajando")
+        a.classList.add("cascoOso")
+        // a.classList.add("oso")
+    },200)
 }
-function aplastabomba(){
+// function cascoT(){
+//     Cuadrado.forEach(cuadrado => {
+//         cuadrado.classList.remove("cascoBajando")
+//         if(cuadrado.classList[1]==a){
+//             cuadrado.classList.remove(a)
+//             cuadrado.classList.add("cascoBajando")
+//             setTimeout(()=>{
+//                 cuadrado.classList.remove("cascoBajando")
+//             },100)
+//         }
+//     })
+// }
+// function aplastacasco(a){
 
-}
+//     a.classList.remove("cascoOso")
+//     a.classList.add("cascoBajando")
+    
+// }
 
 
 function lives(life) {
