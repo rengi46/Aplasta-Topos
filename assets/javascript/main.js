@@ -48,7 +48,7 @@ function stopTimeBar() {
 
 function Dificultad(nivel=0, time = 50, max = 1000) {
     const d = max - (nivel*time)
-    moveSpeed = setInterval(()=>{
+    var moveSpeed = setInterval(()=>{
         console.log(nivel)
         añadiendolo()}, d)
 }
@@ -166,7 +166,6 @@ function aplastabomba(a){
 }
 
 function aplastaOso(a){
-    console.log("pepe")
     a.classList.remove("cascoOso")
     a.classList.add("oso")
 }
