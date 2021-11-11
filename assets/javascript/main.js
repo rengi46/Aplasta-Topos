@@ -225,9 +225,10 @@ function cleanTableDiv(){
 }
 
 function insertIntput(name){
+    cleanTableDiv()
     tableDiv.appendChild(newInputTable('Display Top Ten ', 'id', 'allScores', 'displayScore(topTen)'))
     tableDiv.appendChild(newInputTable('Display All Scores ', 'id', 'allScores', 'displayScore(orderUserBook)'))
-    tableDiv.appendChild(newInputTable('New User', 'id', 'newUser', 'yourloose()'))
+    tableDiv.appendChild(newInputTable('Close Score', 'id', 'Try Again', 'hideScore()'))
     tableDiv.appendChild(newTable())
     callDom()
     table.appendChild(showScores(name))

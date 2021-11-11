@@ -16,6 +16,7 @@ function newP(newContent) {
 function newInput() {
     result = document.createElement('input')
     result.setAttribute('type', 'text')
+    result.setAttribute('placeholder', 'User name ')
     result.setAttribute('id', 'userInput')
     result.classList.add('modal-content')
     result.classList.add('form-element')
