@@ -18,8 +18,8 @@ function printName() {
     user_box.innerText = username;
 }
 
-
 function start() {
+    imgModal.src="/assets/img/redy.png"
     printName()
     closeModal()
     abrirModal()
@@ -48,7 +48,6 @@ function stopTimeBar() {
     Tprogres.classList.remove("timeOut")
 }
 
-
 function Dificultad(nivel=0, time = 50, max = 1000) {
     const d = max - (nivel*time)
         moveSpeed = setInterval(()=>{
@@ -62,20 +61,17 @@ function añadiendolo() {
         topo(Cajaaleatoria)
         esconder("oso")
         esconder("cascoOso")
-
     }
     else if(personaje> 5 && personaje < 9){
         casco(Cajaaleatoria)
         esconder("cascoOso")
         esconder("oso")
-
     }
     else if(personaje > 8){
         bomb(Cajaaleatoria)
         esconder("cascoOso")
         esconder("oso")
     }
-
 };
 
 function topo(a)
@@ -153,7 +149,6 @@ function aplastaoso(a){
     },1000)
 }
 
-
 function aplastabomba(a){
     a.classList.remove("bomb")
     clearInterval(moveSpeed)
@@ -173,8 +168,6 @@ function aplastaOso(a){
     a.classList.remove("cascoOso")
     a.classList.add("oso")
 }
-
-
 
 function lives(life) {
     if (life == 3) { lvl.style.backgroundImage = "url(/assets/img/3vidas.png)" }
@@ -258,23 +251,6 @@ function openTable(){
     closeModal()
     youwin()
 }
-
-
-// function displaytabla(name){
-//     closeModal()
-//     modalContent[0].appendChild(newButton('Display Scores', 'openTable()'))
-//     allContent= ''
-//     div = modalContent[0].appendChild(newDiv())
-    
-//     div.appendChild(newTable())
-//     console.log(div)
-//     allContent.innerHTML= div;
-//     callDom()
-//     allContent.appendChild(showScores(name))
-//     // modalContent[0].appendChild(showScores(name))
-// }
-
-
 
 function EsconderModal() {
     nuevoModal.style.visibility="hidden"

@@ -67,6 +67,7 @@
     text-align: center;
     /* Could be more or less, depending on screen size */
 }
+/* child modal content */
 .modal-content>h2{ background-color: rgba(0, 0, 0, 0.0);
     color: rgb(255, 255, 255);
     font-size: 40px;
@@ -74,6 +75,11 @@
 .modal-content>p{ background-color: rgba(0, 0, 0, 0.0);
     color: rgb(255, 255, 255);
     font-size: 20px;}
+
+.modal-content>p:last-child{ background-color: rgba(0, 0, 0, 0.0);
+    color: rgb(7, 7, 7);
+    font-weight: bolder;
+    font-size: 35px;}
 
 #userInput{
     /* background-color:rgba(156, 230, 100, 0.705) */

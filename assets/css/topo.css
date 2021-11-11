@@ -1,0 +1,98 @@
+#grid_hueco{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr ;
+    grid-template-rows:1fr 1fr 1fr 1fr  ;
+}
+
+.hueco{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 139px;
+    background-image: url(/assets/img/hueco.PNG);
+    margin: auto;
+}
+
+
+.oso{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 139px;
+    background-image: url(/assets/img/topoSalido.PNG);
+    background-repeat: no-repeat;
+    margin: auto;
+}
+.ososal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 139px;
+    background-image: url(/assets/img/mediotopo.PNG);
+    background-repeat: no-repeat;
+    margin: auto;
+}
+
+.osoaplastado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 139px;
+    background-image: url(/assets/img/topoaplastado.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto;
+}
+
+
+.bomb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 139px;
+    background-image: url(/assets/img/bomba.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0px 12px;
+    margin: auto;
+}
+.explo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 139px;
+    background-image: url(/assets/img/explosion.jpg);
+    background-repeat: no-repeat;
+    margin: auto;
+}
+
+
+.cascoOso{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 139px;
+    background-image: url(/assets/img/topocasco.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 7px -15px;
+}
+
+.cascoBajando{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 139px;
+    background-image: url(/assets/img/topocascosaliendo.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 10px 5px;
+}
