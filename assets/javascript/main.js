@@ -1,24 +1,15 @@
 
-// function poneruser() {
-//     const inputname = document.getElementById("userInput")
-//     const user = createUser(inputname.value)
-//     var arruser = (JSON.parse(save.aplastaTopos));
-//     // console.log(arruser)
-//     var objuser = arruser[user]
-//     // console.log(objuser)
-//     user_box.innerText = objuser.nameUser
-// }
-
-// function addScore(name) {
-//     const user = {nameUser: name}
-//     user.scoreUser = finalScore;
-//     var arruser = (JSON.parse(save.aplastaTopos));
-//     arruser.push(user)
-//     console.log(arruser)
-//     arrayString = (JSON.stringify(arruser))
-//     save.aplastaTopos = arrayString;
-// }
-
+function abrirModal(){
+    nuevoModal.style.visibility="visible"
+    setTimeout(()=>{
+        Dificultad(score)
+        imgModal.src="/assets/img/go.png"
+        setTimeout(()=>{
+            EsconderModal()
+            TimeBar()
+        },1000)
+    },1000)
+}
 
 function printName() {
     const inputname = document.getElementById("userInput")
@@ -29,23 +20,19 @@ function printName() {
 
 function start() {
     startTime = new Date
-    TimeBar()
     printName()
-    //addUser()
-    //!poneruser()
     closeModal()
-    Dificultad(score)
+    abrirModal()
 }
 
 function next() {
     startTime = new Date
-    TimeBar()
     closeModal()
+    abrirModal()
 }
 
 //TODO Run time Bar
 function TimeBar() {
-    var antes = new Date
     Tprogres.classList.add("timeOut")
     gameTime = setTimeout(function () {
         cleanModal()
@@ -53,79 +40,137 @@ function TimeBar() {
         yourloose('Your time Finished')
         modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
         resetGame()
-        Dificultad(score)
-        var Despues = new Date
-        // console.log(Despues.getTime() - antes.getTime())
     }, 5000)
 }
 
 //TODO stop Time Bar
 function stopTimeBar() {
+    console.log("timebar")
     clearTimeout(gameTime)
     Tprogres.classList.remove("timeOut")
 }
 
 
 function Dificultad(nivel=0, time = 50, max = 1000) {
-    const c = nivel * time
-    const d = max - c
-    moveSpeed = setInterval(()=>{
-        //console.log(d)
-        añadiendolo()}, d)
+    const d = max - (nivel*time)
+        moveSpeed = setInterval(()=>{
+            añadiendolo()}, d)
 }
 
 function añadiendolo() {
-    //console.log("1")
+    Cajaaleatoria = Cuadrado[Math.floor(Math.random() * 12)]
+    var personaje = Math.floor(Math.random() * 10)
+    if(personaje< 6){
+        topo(Cajaaleatoria)
+        esconder("oso")
+        esconder("cascoOso")
+
+    }
+    else if(personaje> 5 && personaje < 9){
+        casco(Cajaaleatoria)
+        esconder("cascoOso")
+        esconder("oso")
+
+    }
+    else if(personaje > 8){
+        bomb(Cajaaleatoria)
+        esconder("cascoOso")
+        esconder("oso")
+    }
+
+};
+
+function topo(a)
+{
+    a.classList.add("ososal")
+    setTimeout(()=>{
+        a.classList.remove("ososal")
+        a.classList.add("oso")
+    },150)
+}
+function casco(a){
+    a.classList.add("cascoBajando")
+    setTimeout(()=>{
+        a.classList.remove("cascoBajando")
+        a.classList.add("cascoOso")
+        // a.classList.add("oso")
+    },150)
+}
+function bomb(a){
+    const d = 1000 - (score*50)
+    a.classList.add("bomb")
+    setTimeout(()=>{a.classList.remove("bomb")},d)
+}
+function esconder(a){
     Cuadrado.forEach(cuadrado => {
         cuadrado.classList.remove("ososal")
-        if(cuadrado.classList[1]=="oso"){
-            cuadrado.classList.remove("oso")
+        if(cuadrado.classList[1]==a){
+            cuadrado.classList.remove(a)
             cuadrado.classList.add("ososal")
             setTimeout(()=>{
                 cuadrado.classList.remove("ososal")
-            },100)
+            },150)
         }
     })
-    Cajaaleatoria = Cuadrado[Math.floor(Math.random() * 12)]
-    Cajaaleatoria.classList.add("ososal")
-    setTimeout(()=>{
-        Cajaaleatoria.classList.remove("ososal")
-        Cajaaleatoria.classList.add("oso")
-    },100)
-};
-
+}
 
 //TODO click events
 Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", () => {
         if (cuadrado.classList[1] == "oso") {
-            score++
-            userScore.innerHTML = score
-            clearInterval(moveSpeed)
-            stopTimeBar()
-            cuadrado.classList.add("osoaplastado")
-            setTimeout(()=>{
-                cuadrado.classList.remove("osoaplastado")
-                Dificultad(score)
-                cleanModal()
-                yourTime(finalTime() / 1000)
-                playerScore()
-            },1000)
-
-            //console.log(score)
-        } else if (life > 1) {
+            aplastaoso(cuadrado)
+        }else if (cuadrado.classList[1] == "cascoOso"){
+            aplastaOso(cuadrado)
+        }
+        else if(cuadrado.classList[1] == "bomb"){
+            aplastabomba(cuadrado)
+        }
+        else if (life > 1) {
             life--
             lives(life)
         } else if (life == 1) {
+            resetGame()
             cleanModal()
             addUser()
             yourloose("You Don't have move Lives")
             modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
-            resetGame()
-            Dificultad(score)
         }
     });
 });
+
+
+function aplastaoso(a){
+    score++
+    userScore.innerHTML = score
+    clearInterval(moveSpeed)
+    stopTimeBar()
+    a.classList.add("osoaplastado")
+    setTimeout(()=>{
+        a.classList.remove("osoaplastado")
+        cleanModal()
+        yourTime(finalTime() / 1000)
+        playerScore()
+    },1000)
+}
+
+
+function aplastabomba(a){
+    a.classList.remove("bomb")
+    clearInterval(moveSpeed)
+    stopTimeBar()
+    a.classList.add("explo")
+    setTimeout(()=>{
+        a.classList.remove("explo")
+        cleanModal()
+        yourloose("Te exploto en toda la cara")
+        resetGame()
+    },1000)
+}
+
+function aplastaOso(a){
+    a.classList.remove("cascoOso")
+    a.classList.add("oso")
+}
 
 
 
@@ -137,7 +182,6 @@ function lives(life) {
 }
 
 function resetGame() {
-    //console.log("reset")
     stopTimeBar()
     lives(3)
     life = 3
@@ -150,7 +194,6 @@ function resetGame() {
 function finalTime() {
     afterTime = new Date
     contTimer = afterTime.getTime() - startTime.getTime()
-   
     return contTimer;
 }
 
@@ -207,4 +250,9 @@ function displaytabla(name){
     // modalContent[0].appendChild(showScores(name))
 }
 
+
+
+function EsconderModal() {
+    nuevoModal.style.visibility="hidden"
+}
 

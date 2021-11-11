@@ -22,7 +22,11 @@ const Cuadrado = document.querySelectorAll(".hueco")
 //TODO Dom Modal window
 const modal = document.getElementById("myModal");
 const span = document.getElementsByClassName("close")[0];
-const modalContent = document.getElementsByClassName('modal-content')
+const modalContent= document.getElementsByClassName('modal-content')
+//nuevo modal de Ready And go
+const nuevoModal= document.getElementById("nuevo_modal")
+const imgModal= document.querySelector(".imagentopo>img")
+
 
 
 
