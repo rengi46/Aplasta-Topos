@@ -2,6 +2,7 @@
 function abrirModal(){
     nuevoModal.style.visibility="visible"
     setTimeout(()=>{
+        Dificultad(score)
         imgModal.src="/assets/img/go.png"
         setTimeout(()=>{
             EsconderModal()
@@ -13,34 +14,29 @@ function abrirModal(){
 function start() {
     startTime = new Date
     closeModal()
-    Dificultad(0)
     abrirModal()
 }
 
 function next() {
     startTime = new Date
-    TimeBar()
     closeModal()
+    abrirModal()
 }
 
 //TODO Run time Bar
 function TimeBar() {
-    var antes = new Date
     Tprogres.classList.add("timeOut")
     gameTime = setTimeout(function () {
         cleanModal()
         yourloose('Your time Finished')
         modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
         resetGame()
-        Dificultad(1)
-        var Despues = new Date
-        // console.log(Despues.getTime() - antes.getTime())
-    }, 20000)
+    }, 5000)
 }
 
 //TODO stop Time Bar
 function stopTimeBar() {
-    console.log("1a")
+    console.log("timebar")
     clearTimeout(gameTime)
     Tprogres.classList.remove("timeOut")
 }
@@ -48,9 +44,9 @@ function stopTimeBar() {
 
 function Dificultad(nivel=0, time = 50, max = 1000) {
     const d = max - (nivel*time)
-    moveSpeed = setInterval(()=>{
-        console.log(nivel)
-        añadiendolo()}, d)
+    console.log(nivel)
+        moveSpeed = setInterval(()=>{
+            añadiendolo()}, d)
 }
 
 function añadiendolo() {
@@ -82,7 +78,7 @@ function topo(a)
     setTimeout(()=>{
         a.classList.remove("ososal")
         a.classList.add("oso")
-    },200)
+    },150)
 }
 function casco(a){
     a.classList.add("cascoBajando")
@@ -90,7 +86,7 @@ function casco(a){
         a.classList.remove("cascoBajando")
         a.classList.add("cascoOso")
         // a.classList.add("oso")
-    },200)
+    },150)
 }
 function bomb(a){
     const d = 1000 - (score*50)
@@ -105,7 +101,7 @@ function esconder(a){
             cuadrado.classList.add("ososal")
             setTimeout(()=>{
                 cuadrado.classList.remove("ososal")
-            },100)
+            },150)
         }
     })
 }
@@ -125,9 +121,9 @@ Cuadrado.forEach(cuadrado => {
             life--
             lives(life)
         } else if (life == 1) {
+            resetGame()
             cleanModal()
             yourloose("You Don't have move Lives")
-            resetGame()
             modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
         }
     });
@@ -137,13 +133,11 @@ Cuadrado.forEach(cuadrado => {
 function aplastaoso(a){
     score++
     userScore.innerHTML = score
-    console.log("2a")
     clearInterval(moveSpeed)
     stopTimeBar()
     a.classList.add("osoaplastado")
     setTimeout(()=>{
         a.classList.remove("osoaplastado")
-        Dificultad(3)
         cleanModal()
         yourTime(finalTime() / 1000)
         playerScore()
@@ -153,7 +147,6 @@ function aplastaoso(a){
 
 function aplastabomba(a){
     a.classList.remove("bomb")
-    console.log("3a")
     clearInterval(moveSpeed)
     stopTimeBar()
     a.classList.add("explo")
@@ -186,7 +179,6 @@ function resetGame() {
     score = 0
     userScore.innerHTML = score
     scoreResult = 0
-    console.log("4a")
     clearInterval(moveSpeed)
 }
 
