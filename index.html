@@ -54,16 +54,15 @@
             <div id="hueco12" class="hueco"></div>
         </div>
     </div>
-    <div id="tableDiv">
-        <input type="button" value="All Scores" id="allScores">
-        <input type="button" value="Top Ten" id="topTen">
+    <div id="tableDiv" class="hide">
+        <input type="button" value="Close Score" id="closeScore" onclick="hideScore()">
+        <input type="button" value="All Scores" id="allScores"  onclick='displayScore(orderUserBook)'>
+        <input type="button" value="Top Ten" id="topTen" onclick="displayScore(topTen)">
         <table id="scoreTable">
-            <th>
                 <tr>
                     <td>User Name</td>
                     <td> Score </td>
                 </tr>
-            </th>
         </table>
     </div>
         <!--todo The Modal -->

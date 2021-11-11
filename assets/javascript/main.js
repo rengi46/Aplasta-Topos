@@ -169,7 +169,42 @@ function calculateScore() {
 };
 
 //TODO display score list
-function displayScore(){
-    console.log(orderUserBook)
-    showScores(orderUserBook)
+function displayScore(name){
+    callDom()
+    tableDiv.classList.remove('hide')
+    tableDiv.classList.add('show')
+    First.classList.remove('show')
+    First.classList.add('hide')
+    closeModal()
+    showScores(name)
 }
+
+function hideScore(){
+    tableDiv.classList.remove('show')
+    tableDiv.classList.add('hide')
+    First.classList.remove('hide')
+    First.classList.add('show')
+    yourloose()
+}
+
+function openTable(){
+    closeModal()
+    youwin()
+}
+
+
+function displaytabla(name){
+    closeModal()
+    modalContent[0].appendChild(newButton('Display Scores', 'openTable()'))
+    allContent= ''
+    div = modalContent[0].appendChild(newDiv())
+    
+    div.appendChild(newTable())
+    console.log(div)
+    allContent.innerHTML= div;
+    callDom()
+    allContent.appendChild(showScores(name))
+    // modalContent[0].appendChild(showScores(name))
+}
+
+

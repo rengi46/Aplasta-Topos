@@ -24,7 +24,7 @@ function yourloose(text = 'You Lose') {
     modalContent[0].appendChild(newH2(text))
     modalContent[0].appendChild(newP("Try again"))
     modalContent[0].appendChild(newButton('Try again', 'next()'))
-    modalContent[0].appendChild(newButton('Display Scores', 'showScores(topTen)'))
+    modalContent[0].appendChild(newButton('Display Scores', 'openTable()'))
     modalContent[0].appendChild(newButton('New User', 'modalStart()'))
     //winersScore()
     //addUser()
@@ -44,9 +44,11 @@ function yourTime(time){
 
 //TODO Display modal Win
 function youwin() {
-    modalContent[0].appendChild(newH2("You Win"))
-    modalContent[0].appendChild(newP("Try again"))
-    modalContent[0].appendChild(newButton('Next', 'next()'))
+    modalContent[0].appendChild(newH2("Score Board"))
+    modalContent[0].appendChild(newButton('Display tabla ', 'displayScore(topTen)'))
+    modalContent[0].appendChild(newButton('Display Tabla Modal', 'displaytabla(topTen)'))
+    modalContent[0].appendChild(newButton('Back to Start', 'modalStart()'))
+    // modalContent[0].appendChild(showScores(topTen))
     openModal()
 }
 

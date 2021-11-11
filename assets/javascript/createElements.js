@@ -22,13 +22,18 @@ function newInput() {
     return result
 }
 
-// function newDiv(){
-//     result = document.createElement('div')
-//     result.setAttribute('id', 'scoreDiv')
-//     result.classList.add('modal-content')
-//     result.classList.add('form-element')
-//     return result
-// }
+function newDiv(){
+    result = document.createElement('div')
+    result.setAttribute('id', 'tableDiv')
+    result.classList.add('modal-content')
+    result.classList.add('form-element')
+    return result
+}
+
+function newTable(){
+    result = document.createElement('table')
+    result.setAttribute('id', 'scoreTable')
+}
 
 //TODO Create Element button
 function newButton(name = 'Start', func ) {
@@ -48,6 +53,7 @@ function newTd(newContent) {
     result.innerHTML = newContent;
     return result;
 };
+
 
 
 
