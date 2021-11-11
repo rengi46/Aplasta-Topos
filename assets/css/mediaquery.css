@@ -1,17 +1,33 @@
-@media screen and (min-width: 440px){
-    #grid_hueco{
-        /* display: flex;
-        flex-wrap: wrap;
-        -ms-flex-align: center; */
-    
-        display: grid;
-        grid-template-columns:1fr 1fr 1fr 1fr ;
-        grid-template-rows:1fr 1fr 1fr 1fr  ;
-      
+@media screen and (min-width: 769px){
+    .modal-content {
+        background-color: #fefefe;
+        display: flex;
+        flex-direction: column;
+        margin: 8% auto;
+        /* 15% from the top and centered */
+        padding: 20px;
+        border-radius: 8px;
+        width: 50%;
     }
-    .timeOut{
-        transition: width 3s;
-        width: 910px;
-    
+    .modal-content>button{
+        margin: 10px auto;
+        align-content: center;
+        padding-left: 20%;
     }
 }
+/* @media screen and (min-width: 430px){
+    .modal-content {
+        background-color: #fefefe;
+        display: flex;
+        flex-direction: column;
+        margin: 8% auto;
+        padding: 20px;
+        border-radius: 8px;
+        width: 50%;
+    }
+    .modal-content>button{
+        margin: 10px auto;
+        align-content: center;
+        padding-left: 13%;
+    }
+} */
