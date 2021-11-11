@@ -201,8 +201,8 @@ body{
 }
 
 .hide{
-    visibility: hidden;
     display: none;
+    visibility: hidden;
 }
 
 .show{
