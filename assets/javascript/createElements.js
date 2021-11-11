@@ -23,6 +23,7 @@ function newInput() {
     return result
 }
 
+//TODO create a div
 function newDiv(){
     result = document.createElement('div')
     result.setAttribute('id', 'tableDiv')
@@ -31,6 +32,7 @@ function newDiv(){
     return result
 }
 
+//TODO create table
 function newTable(){
     result = document.createElement('table')
     result.setAttribute('id', 'scoreTable')
@@ -68,16 +70,14 @@ function newTd(newContent) {
 };
 
 
-
-
-var listUser
+//TODO create and add tr and td
 function showScores(book) {
     table.innerHTML = "";
     const tr = document.createElement('tr');
         tr.appendChild(newTd('User Name'));
         tr.appendChild(newTd('User Score'));
         table.appendChild(tr)
-    
+
     book.forEach(user => {
         const tr = document.createElement('tr');
         tr.appendChild(newTd(user.name));

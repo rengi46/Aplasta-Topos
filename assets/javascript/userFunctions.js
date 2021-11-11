@@ -1,3 +1,4 @@
+//TODO create a user object
 function user(name = 'guest', score = 0) {
     return {
         name: name,
@@ -5,6 +6,7 @@ function user(name = 'guest', score = 0) {
     }
 }
 
+//TODO load users and scores from localStorage
 function loadUser() {
     if (localStorage.getItem('userBook') == null) {
         return []
@@ -12,8 +14,7 @@ function loadUser() {
     return JSON.parse(localStorage.getItem('userBook'))
 }
 
-username = document.getElementById('userInput')
-
+//TODO add user and save on localStorage
 function addUser() {
     calculateScore()
     nameUser = user_box.textContent
@@ -23,6 +24,7 @@ function addUser() {
     localStorage.setItem('userBook', JSON.stringify(userBook))
 }
 
+//TODO order variable from score and split on first top ten
 function orderBook() {
     orderUserBook = userBook.sort((a, b)=> a.score - b.score)
     topTen= orderUserBook.slice(0, 10)

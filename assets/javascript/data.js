@@ -10,3 +10,6 @@ var scoreResult = 0
 
 var userBook
 var orderUserBook
+
+var timedespues
+var listUser
