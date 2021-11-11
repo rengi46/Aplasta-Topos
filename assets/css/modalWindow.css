@@ -46,9 +46,15 @@
 
 
 /* Modal Content/Box */
+.garden{
+    background-image: url(/assets/img/jardinFondo.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 150%;
+    background-position: 0px -30px;
 
+}
 .modal-content {
-    background-color: #fefefe;
+
     margin: 15% auto;
     /* 15% from the top and centered */
     padding: 20px;
@@ -58,8 +64,10 @@
     text-align: center;
     /* Could be more or less, depending on screen size */
 }
-.modal-content>h2{background-color: white;}
+.modal-content>h2{background-color: white;
+}
 .modal-content>p{background-color: white;}
+
 
 /* The Close Button */
 
