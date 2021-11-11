@@ -3,6 +3,7 @@
         background-color: #fefefe;
         display: flex;
         flex-direction: column;
+        align-items: center;
         margin: 8% auto;
         /* 15% from the top and centered */
         padding: 20px;
@@ -10,9 +11,8 @@
         width: 50%;
     }
     .modal-content>button{
+        background-color: rgba(250, 250, 250, 0.8);
         margin: 10px auto;
-        align-content: center;
-        padding-left: 22%;
     }
 }
  @media screen and (max-width: 430px){
