@@ -1,3 +1,4 @@
+/* todo Modal ocntainer Div */
 .modal {
     display: none;
     /* Hidden by default */
@@ -18,6 +19,8 @@
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
 }
+
+/* todo second Modal */
 .nuevo_modal{
     display:flex;
     justify-content: center;
@@ -45,7 +48,7 @@
 
 
 
-/* Modal Content/Box */
+/*todo Modal Content/Box */
 .garden{
     background: url(/assets/img/Background1.jpg);
     background-repeat: no-repeat;
@@ -56,6 +59,8 @@
     /* background-position: 0px -30px; */
 
 }
+
+/* todo  main Modal Content elements created */
 .modal-content {
     background-color: #fefefe;
     margin: 10% auto;
@@ -67,7 +72,7 @@
     text-align: center;
     /* Could be more or less, depending on screen size */
 }
-/* child modal content */
+/*todo child modal content */
 .modal-content>h2{ background-color: rgba(0, 0, 0, 0.0);
     color: rgb(255, 255, 255);
     font-size: 40px;
