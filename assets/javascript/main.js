@@ -258,23 +258,6 @@ function openTable(){
     youwin()
 }
 
-
-// function displaytabla(name){
-//     closeModal()
-//     modalContent[0].appendChild(newButton('Display Scores', 'openTable()'))
-//     allContent= ''
-//     div = modalContent[0].appendChild(newDiv())
-    
-//     div.appendChild(newTable())
-//     console.log(div)
-//     allContent.innerHTML= div;
-//     callDom()
-//     allContent.appendChild(showScores(name))
-//     // modalContent[0].appendChild(showScores(name))
-// }
-
-
-
 function EsconderModal() {
     nuevoModal.style.visibility="hidden"
 }

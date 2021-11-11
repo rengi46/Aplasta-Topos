@@ -67,6 +67,7 @@
     text-align: center;
     /* Could be more or less, depending on screen size */
 }
+/* child modal content */
 .modal-content>h2{ background-color: rgba(0, 0, 0, 0.0);
     color: rgb(255, 255, 255);
     font-size: 40px;

@@ -1,12 +1,3 @@
-//TODO modal window
-
-// function modalText(text) {
-//     pOne = document.createElement('p')
-//     pOne.innerHTML = text
-//     modalContent[0].appendChild(pOne)
-//     modalContent[0].appendChild(newButton())
-//     openModal()
-// }
 
 //TODO Display modal Start
 function modalStart() {
@@ -71,13 +62,6 @@ function cleanModal(){
 span.onclick = function () {
     modal.style.display = "none";
 }
-
-// //TODO clicks anywhere outside of the modal, close it
-// window.onclick = function (event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//     }
-// }
 
 //TODO open modal start
 window.onload = function () {
