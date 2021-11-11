@@ -18,7 +18,6 @@ function printName() {
     user_box.innerText = username;
 }
 
-
 function start() {
     printName()
     closeModal()
@@ -48,7 +47,6 @@ function stopTimeBar() {
     Tprogres.classList.remove("timeOut")
 }
 
-
 function Dificultad(nivel=0, time = 50, max = 1000) {
     const d = max - (nivel*time)
         moveSpeed = setInterval(()=>{
@@ -62,20 +60,17 @@ function añadiendolo() {
         topo(Cajaaleatoria)
         esconder("oso")
         esconder("cascoOso")
-
     }
     else if(personaje> 5 && personaje < 9){
         casco(Cajaaleatoria)
         esconder("cascoOso")
         esconder("oso")
-
     }
     else if(personaje > 8){
         bomb(Cajaaleatoria)
         esconder("cascoOso")
         esconder("oso")
     }
-
 };
 
 function topo(a)
@@ -153,7 +148,6 @@ function aplastaoso(a){
     },1000)
 }
 
-
 function aplastabomba(a){
     a.classList.remove("bomb")
     clearInterval(moveSpeed)
@@ -173,8 +167,6 @@ function aplastaOso(a){
     a.classList.remove("cascoOso")
     a.classList.add("oso")
 }
-
-
 
 function lives(life) {
     if (life == 3) { lvl.style.backgroundImage = "url(/assets/img/3vidas.png)" }
