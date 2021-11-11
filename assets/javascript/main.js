@@ -19,6 +19,7 @@ function printName() {
 }
 
 function start() {
+    imgModal.src="/assets/img/redy.png"
     printName()
     closeModal()
     abrirModal()
