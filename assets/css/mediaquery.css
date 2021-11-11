@@ -3,7 +3,7 @@
         background-color: #fefefe;
         display: flex;
         flex-direction: column;
-        margin: 8% auto;
+        margin: 7% auto;
         /* 15% from the top and centered */
         padding: 20px;
         border-radius: 8px;
@@ -12,7 +12,6 @@
     .modal-content>button{
         margin: 10px auto;
         align-content: center;
-        padding-left: 22%;
     }
 }
  @media screen and (max-width: 430px){
