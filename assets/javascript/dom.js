@@ -11,8 +11,8 @@ const oso = document.querySelector(".oso")
 const lvl = document.getElementById("lvl")
 const user_box = document.getElementById("user_box")
 //const divContent = document.getElementById("scoreDiv")
-var save = window.localStorage;
-let jon
+// var save = window.localStorage;
+// let jon
 
 let score = 0
 let userScore = document.getElementById('userScore')

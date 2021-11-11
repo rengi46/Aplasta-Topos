@@ -7,6 +7,7 @@ function abrirModal(){
         setTimeout(()=>{
             EsconderModal()
             TimeBar()
+            startTime = new Date
         },1000)
     },1000)
 }
@@ -19,14 +20,12 @@ function printName() {
 
 
 function start() {
-    startTime = new Date
     printName()
     closeModal()
     abrirModal()
 }
 
 function next() {
-    startTime = new Date
     closeModal()
     abrirModal()
 }
@@ -45,7 +44,6 @@ function TimeBar() {
 
 //TODO stop Time Bar
 function stopTimeBar() {
-    console.log("timebar")
     clearTimeout(gameTime)
     Tprogres.classList.remove("timeOut")
 }
@@ -129,27 +127,29 @@ Cuadrado.forEach(cuadrado => {
             life--
             lives(life)
         } else if (life == 1) {
-            resetGame()
             cleanModal()
             addUser()
             yourloose("You Don't have move Lives")
             modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
+            resetGame()
         }
     });
 });
 
-
+var timedespues
 function aplastaoso(a){
     score++
     userScore.innerHTML = score
     clearInterval(moveSpeed)
     stopTimeBar()
+    timedespues=finalTime()
+    //console.log(timedespues)
     a.classList.add("osoaplastado")
     setTimeout(()=>{
         a.classList.remove("osoaplastado")
         cleanModal()
-        yourTime(finalTime() / 1000)
-        playerScore()
+        yourTime(timedespues / 1000)
+        playerScore(timedespues)
     },1000)
 }
 
@@ -163,6 +163,8 @@ function aplastabomba(a){
         a.classList.remove("explo")
         cleanModal()
         yourloose("Te exploto en toda la cara")
+        modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
+        addUser()
         resetGame()
     },1000)
 }
@@ -198,18 +200,38 @@ function finalTime() {
 }
 
 //TODO calculate level time
-function playerScore() {
-    actualtime = finalTime()
-    minus = 3000 - actualtime
+function playerScore(timer) {
+    actualtime = timer
+    console.log(actualtime)
+    minus = 5000 - actualtime
     scoreResult += minus
+    console.log(scoreResult)
     minus = 0
+    return scoreResult
 }
 
 //TODO calculate final Score
 function calculateScore() {
+    console.log(scoreResult)
     finalScore = (maxtime - scoreResult) / 1000
+    console.log(finalScore, scoreResult)
     return finalScore
 };
+
+function cleanTableDiv(){
+    while (tableDiv.firstChild) {
+        tableDiv.removeChild(tableDiv.lastChild);
+    }
+}
+
+function insertIntput(name){
+    tableDiv.appendChild(newInputTable('Display Top Ten ', 'id', 'allScores', 'displayScore(topTen)'))
+    tableDiv.appendChild(newInputTable('Display All Scores ', 'id', 'allScores', 'displayScore(orderUserBook)'))
+    tableDiv.appendChild(newInputTable('New User', 'id', 'newUser', 'yourloose()'))
+    tableDiv.appendChild(newTable())
+    callDom()
+    table.appendChild(showScores(name))
+}
 
 //TODO display score list
 function displayScore(name){
@@ -219,7 +241,8 @@ function displayScore(name){
     First.classList.remove('show')
     First.classList.add('hide')
     closeModal()
-    showScores(name)
+    tableDiv.appendChild(insertIntput(name))
+    //showScores(name)
 }
 
 function hideScore(){
@@ -236,19 +259,19 @@ function openTable(){
 }
 
 
-function displaytabla(name){
-    closeModal()
-    modalContent[0].appendChild(newButton('Display Scores', 'openTable()'))
-    allContent= ''
-    div = modalContent[0].appendChild(newDiv())
+// function displaytabla(name){
+//     closeModal()
+//     modalContent[0].appendChild(newButton('Display Scores', 'openTable()'))
+//     allContent= ''
+//     div = modalContent[0].appendChild(newDiv())
     
-    div.appendChild(newTable())
-    console.log(div)
-    allContent.innerHTML= div;
-    callDom()
-    allContent.appendChild(showScores(name))
-    // modalContent[0].appendChild(showScores(name))
-}
+//     div.appendChild(newTable())
+//     console.log(div)
+//     allContent.innerHTML= div;
+//     callDom()
+//     allContent.appendChild(showScores(name))
+//     // modalContent[0].appendChild(showScores(name))
+// }
 
 
 

@@ -33,6 +33,7 @@ function newDiv(){
 function newTable(){
     result = document.createElement('table')
     result.setAttribute('id', 'scoreTable')
+    return result
 }
 
 //TODO Create Element button
@@ -44,6 +45,17 @@ function newButton(name = 'Start', func ) {
     button.setAttribute('onclick', func)
     button.innerHTML = name
     return button
+}
+
+//TODO Create Element button
+function newInputTable(name = 'Start', setId, nameId,  func ) {
+    result = document.createElement('input')
+    result.setAttribute('type', 'button')
+    result.setAttribute('value', name)
+    result.setAttribute(setId, nameId)
+    result.setAttribute('onclick', func)
+    //result.innerHTML = name
+    return result
 }
 
 

@@ -57,8 +57,8 @@
 
 }
 .modal-content {
-
-    margin: 15% auto;
+    background-color: #fefefe;
+    margin: 10% auto;
     /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
@@ -74,6 +74,11 @@
 .modal-content>p{ background-color: rgba(0, 0, 0, 0.0);
     color: rgb(255, 255, 255);
     font-size: 20px;}
+
+.modal-content>p:last-child{ background-color: rgba(0, 0, 0, 0.0);
+    color: rgb(7, 7, 7);
+    font-weight: bolder;
+    font-size: 35px;}
 
 #userInput{
     /* background-color:rgba(156, 230, 100, 0.705) */
