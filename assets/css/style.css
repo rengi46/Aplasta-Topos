@@ -2,6 +2,8 @@ body{
     background-color:rgba(156,230,81,255);
     cursor: url(/assets/img/cursor4.cur),pointer;
 }
+
+/* todo cursor img */
 *:active{
     cursor: url(/assets/img/cursor3.cur),pointer;
 }
@@ -12,7 +14,8 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-/* score */
+
+/*todo score */
 .score{
     height: 50px;
     width: 100px;
@@ -23,20 +26,23 @@ body{
     text-align: center;
     margin: 15px;
 }
+
 .score>div{
     font-size: larger;
     color: black;
     background-color: red;
     padding-top: 5px;
 }
-/* nivel */
+
+/*todo nivel */
 .lvl{
     height: 60px;
     width: 180px;
     background-image: url(/assets/img/3vidas.png);
     background-size: cover;
 }
-/* nombre user */
+
+/*todo nombre user */
 .user_box{
     height: 50px;
     width: 30%;
@@ -44,7 +50,8 @@ body{
     font-size: 2em;
     text-align: center;
 }
-/* time bar */
+
+/*todo time bar */
 .Tbar{
     margin: 20px;
     height: 20px;
@@ -67,7 +74,7 @@ body{
 
 
 
-/* modal prueba */
+/*todo modal prueba */
 .centramelo{
     background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
     /* background: green; */
@@ -78,9 +85,8 @@ body{
     align-content: center;
     top: 0%;
 }
-/* #display2{
-    display: none;
-} */
+
+/*todo*/
 .center button{
     font-weight: 700;
     border: none;
@@ -90,16 +96,11 @@ body{
 }
 .center{
     background: white;
-    /* box-shadow: 2px 2px 5px 5px ; */
     width: 335px;
     align-items: center;
     justify-content: center;
     position: absolute;
     top: 50px;
-    /* top: 0%;
-    align-content: center;
-    align-self: center;
-    /* left: 40%; */
 }
 
 .center .form h2{
@@ -126,20 +127,20 @@ body{
     border-radius:5px;
 }
 
+/*todo hide and display Score Tables */
 .hide{
-    display: none;
+    display: none !important;
     visibility: hidden;
 }
 
 .show{
+    display:  block !important;
     visibility: visible;
-    display: block;
 }
 
+/*Todo Table Score*/
 #tableDiv{
     font-weight: bold;
-    visibility: none;
-    display: grid;
     background-color: #fefefe;
     margin: 5% auto;
     padding: 20px;
@@ -148,6 +149,7 @@ body{
     width: 80%;
     text-align: center;
 }
+
 #tableDiv input{
     font-weight: bold;
     font-size: large;
@@ -158,7 +160,9 @@ body{
     width: 100%;
     text-align: center;
 }
+
 table{
+    width: 100%;
     margin-top: 1%;
     border: 1px solid;
     grid-template-columns: 1fr 1fr;

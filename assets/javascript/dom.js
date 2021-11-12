@@ -1,3 +1,4 @@
+//TODO funtction to update dom Element
 function callDom() {
     //TODO Table dom
     tableDiv = document.getElementById('tableDiv')
@@ -9,7 +10,8 @@ const First = document.getElementById("container1")
 const butStart = document.getElementById("Next_page")
 const lvl = document.getElementById("lvl")
 const user_box = document.getElementById("user_box")
-let userScore = document.getElementById('userScore')
+const userScore = document.getElementById('userScore')
+const username = document.getElementById('userInput')
 
 //TODO oso
 const oso = document.querySelector(".oso")
@@ -23,9 +25,6 @@ const modalContent= document.getElementsByClassName('modal-content')
 //TODO nuevo modal de Ready And go
 const nuevoModal= document.getElementById("nuevo_modal")
 const imgModal= document.querySelector(".imagentopo>img")
-
-
-
 
 //TODO time bar
 const Tprogres = document.getElementById("Tprogres")

@@ -1,4 +1,4 @@
-
+//TODO Open modal
 function abrirModal(){
     nuevoModal.style.visibility="visible"
     setTimeout(()=>{
@@ -12,12 +12,14 @@ function abrirModal(){
     },1000)
 }
 
+//TODO add and print user name
 function printName() {
     const inputname = document.getElementById("userInput")
     let username= inputname.value;
     user_box.innerText = username;
 }
 
+//TODO button Start
 function start() {
     imgModal.src="/assets/img/redy.png"
     printName()
@@ -25,6 +27,7 @@ function start() {
     abrirModal()
 }
 
+//TODO button Next
 function next() {
     closeModal()
     abrirModal()
@@ -48,12 +51,14 @@ function stopTimeBar() {
     Tprogres.classList.remove("timeOut")
 }
 
+//TODO dificult Level
 function Dificultad(nivel=0, time = 50, max = 1000) {
     const d = max - (nivel*time)
         moveSpeed = setInterval(()=>{
             añadiendolo()}, d)
 }
 
+//TODO Add mole
 function añadiendolo() {
     Cajaaleatoria = Cuadrado[Math.floor(Math.random() * 12)]
     var personaje = Math.floor(Math.random() * 10)
@@ -74,14 +79,16 @@ function añadiendolo() {
     }
 };
 
-function topo(a)
-{
+//TODO
+function topo(a){
     a.classList.add("ososal")
     setTimeout(()=>{
         a.classList.remove("ososal")
         a.classList.add("oso")
     },150)
 }
+
+//TODO add remove helmet
 function casco(a){
     a.classList.add("cascoBajando")
     setTimeout(()=>{
@@ -90,11 +97,15 @@ function casco(a){
         // a.classList.add("oso")
     },150)
 }
+
+//TODO add and remove bomb
 function bomb(a){
     const d = 1000 - (score*50)
     a.classList.add("bomb")
     setTimeout(()=>{a.classList.remove("bomb")},d)
 }
+
+//TODO move mole
 function esconder(a){
     Cuadrado.forEach(cuadrado => {
         cuadrado.classList.remove("ososal")
@@ -132,14 +143,13 @@ Cuadrado.forEach(cuadrado => {
     });
 });
 
-var timedespues
+//TODO display mole
 function aplastaoso(a){
     score++
     userScore.innerHTML = score
     clearInterval(moveSpeed)
     stopTimeBar()
     timedespues=finalTime()
-    //console.log(timedespues)
     a.classList.add("osoaplastado")
     setTimeout(()=>{
         a.classList.remove("osoaplastado")
@@ -149,6 +159,7 @@ function aplastaoso(a){
     },1000)
 }
 
+//TODO Bomb show 
 function aplastabomba(a){
     a.classList.remove("bomb")
     clearInterval(moveSpeed)
@@ -164,11 +175,13 @@ function aplastabomba(a){
     },1000)
 }
 
+//TODO add and remove classList to mole
 function aplastaOso(a){
     a.classList.remove("cascoOso")
     a.classList.add("oso")
 }
 
+//TODO remove heart lives
 function lives(life) {
     if (life == 3) { lvl.style.backgroundImage = "url(/assets/img/3vidas.png)" }
     else if (life == 2) { lvl.style.backgroundImage = "url(/assets/img/2vida.png)" }
@@ -176,6 +189,7 @@ function lives(life) {
     else lvl.style.backgroundImage = "url(/assets/img/noVidas.png)"
 }
 
+//TODO Reset Game parameter
 function resetGame() {
     stopTimeBar()
     lives(3)
@@ -186,6 +200,7 @@ function resetGame() {
     clearInterval(moveSpeed)
 }
 
+//TODO Count time to click
 function finalTime() {
     afterTime = new Date
     contTimer = afterTime.getTime() - startTime.getTime()
@@ -211,12 +226,14 @@ function calculateScore() {
     return finalScore
 };
 
+//TODO clean table div
 function cleanTableDiv(){
     while (tableDiv.firstChild) {
         tableDiv.removeChild(tableDiv.lastChild);
     }
 }
 
+//TODO create input tables elements
 function insertIntput(name){
     cleanTableDiv()
     tableDiv.appendChild(newInputTable('Display Top Ten ', 'id', 'allScores', 'displayScore(topTen)'))
@@ -239,6 +256,7 @@ function displayScore(name){
     //showScores(name)
 }
 
+//TODO hide score list
 function hideScore(){
     tableDiv.classList.remove('show')
     tableDiv.classList.add('hide')
@@ -247,6 +265,7 @@ function hideScore(){
     yourloose()
 }
 
+//TODO open table
 function openTable(){
     closeModal()
     youwin()
