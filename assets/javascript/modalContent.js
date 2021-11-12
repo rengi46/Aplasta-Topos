@@ -31,11 +31,11 @@ function yourTime(time){
 
 //TODO Display modal Win
 function youwin() {
-    modalContent[0].appendChild(newH2("Score Board"))
-    modalContent[0].appendChild(newButton('Display Tabla Modal', 'displaytabla(topTen)'))
-    modalContent[0].appendChild(newButton('Display tabla ', 'displayScore(topTen)'))
-    modalContent[0].appendChild(newButton('Back to Start', 'modalStart()'))
-    // modalContent[0].appendChild(showScores(topTen))
+    modalContent[0].appendChild(newH2("Rules"))
+    modalContent[0].appendChild(newP("You have tree lives"))
+    modalContent[0].appendChild(newP("You loose lives when click out off mole"))
+    modalContent[0].appendChild(newP(""))
+
     openModal()
 }
 
@@ -51,7 +51,7 @@ function closeModal() {
     cleanModal()
 }
 
-//TODO clean modal 
+//TODO clean modal
 function cleanModal(){
         while (modalContent[0].firstChild) {
             modalContent[0].removeChild(modalContent[0].lastChild);
