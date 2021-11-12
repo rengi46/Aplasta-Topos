@@ -182,4 +182,8 @@ td{
 
 #Next_page{
     font-weight: bold;
-};
+    }
+
+    .modal-content>button{
+        border-radius: 10px;
+    }
