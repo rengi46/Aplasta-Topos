@@ -5,10 +5,19 @@ function modalStart() {
     modalContent[0].appendChild(newH2('Welcome'))
     modalContent[0].appendChild(newP('Insert Your User Name'))
     modalContent[0].appendChild(newInput())
-    modalContent[0].appendChild(newButton('Start', 'start()'))
+    modalContent[0].appendChild(newButton('rules', 'rules()'))
+    modalContent[0].appendChild(newButton('START', 'start()'))
     openModal()
 }
-
+// cambios con rules...
+function rules(){
+    closeModal()
+    modalContent[0].appendChild(newH2('Rules'))
+    modalContent[0].appendChild(newP('<b>3</b> Lives <br> <b>50</b> seconds countdown <br> <b>5</b> seconds to click the mole'))
+    modalContent[0].appendChild(newP('<b>Mole:</b> Win <br> <b> Mole Helmet:</b> Two clicks to win <br> <b>Bomb: </b>Click and you will die'))
+    modalContent[0].appendChild(newButton('Return', 'modalStart()'))
+    openModal()
+}
 //TODO Display modal Lose
 function yourloose(text = 'You Lose') {
     modalContent[0].appendChild(newH2(text))
