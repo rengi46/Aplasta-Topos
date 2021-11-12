@@ -84,4 +84,5 @@ function showScores(book) {
         tr.appendChild(newTd(user.score));
         table.appendChild(tr)
     });
+    //return table
 };
