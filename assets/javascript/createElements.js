@@ -78,7 +78,7 @@ function showScores(book) {
         tr.appendChild(newTd('User Score'));
         table.appendChild(tr)
 
-    book.forEach(user => {
+    userBook.forEach(user => {
         const tr = document.createElement('tr');
         tr.appendChild(newTd(user.name));
         tr.appendChild(newTd(user.score));

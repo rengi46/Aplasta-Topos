@@ -13,6 +13,10 @@ body{
     height: 70px;
     justify-content: space-around;
     align-items: center;
+    position: absolute;
+    left: 45%;
+    right: 45%;
+    top: 70px;
 }
 
 /*todo score */
@@ -25,22 +29,26 @@ body{
     color: white;
     text-align: center;
     margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .score>div{
     font-size: larger;
-    color: black;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
     background-color: red;
-    padding-top: 5px;
+    /* padding-top: 5px; */
 }
 
-/*todo nivel */
+/* todo nivel
 .lvl{
     height: 60px;
     width: 180px;
     background-image: url(/assets/img/3vidas.png);
     background-size: cover;
-}
+} */
 
 /*todo nombre user */
 .user_box{
@@ -52,6 +60,11 @@ body{
 }
 
 /*todo time bar */
+.time_bar{
+    position: absolute;
+    top:20px ;
+    width: 100% ;
+}
 .Tbar{
     margin: 20px;
     height: 20px;
@@ -67,7 +80,7 @@ body{
     background-color: red;
 }
 .timeOut{
-    transition: width 5s;
+    transition: width 60s;
     width: 100%;
 
 }

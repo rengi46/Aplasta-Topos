@@ -1,7 +1,6 @@
 
 var startTime;
 var afterTime;
-var life=3;
 let score = 0
 
 var finalScore;
