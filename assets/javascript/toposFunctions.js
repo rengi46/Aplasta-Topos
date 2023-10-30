@@ -4,7 +4,7 @@
 function Dificultad(nivel=0, time = 50, max = 1000) {
   // const d = max - (nivel*time)
       moveSpeed = setInterval(()=>{
-          añadiendolo()}, 1000)
+          añadiendolo()}, 1500)
 }
 
 //TODO Add mole

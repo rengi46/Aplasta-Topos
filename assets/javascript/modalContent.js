@@ -116,7 +116,7 @@ function abrirModalGo(){
     nuevoModal.style.visibility="visible"
     setTimeout(()=>{
         Dificultad(score)
-        imgModal.src="/assets/img/go.png"
+        imgModal.src="/img/go.png"
         setTimeout(()=>{
             nuevoModal.style.visibility="hidden"
             TimeBar()

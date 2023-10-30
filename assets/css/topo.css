@@ -1,5 +1,5 @@
 #grid_hueco{
-    background-image: url(/assets/img/Background1.png);
+    background-image: url(/img/Background1.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 80vh;
@@ -15,7 +15,7 @@
     align-items: center;
     height: 140px;
     width: 149px;
-    background-image: url(/assets/img/hueco.PNG);
+    background-image: url(/img/hueco.PNG);
     margin: auto;
 }
 
@@ -26,7 +26,7 @@
     align-items: center;
     height: 140px;
     width: 139px;
-    background-image: url(/assets/img/topoSalido.PNG);
+    background-image: url(/img/topoSalido.PNG);
     background-repeat: no-repeat;
     margin: auto;
 }
@@ -36,7 +36,7 @@
     align-items: center;
     height: 140px;
     width: 139px;
-    background-image: url(/assets/img/mediotopo.PNG);
+    background-image: url(/img/mediotopo.PNG);
     background-repeat: no-repeat;
     margin: auto;
 }
@@ -47,7 +47,7 @@
     align-items: center;
     height: 140px;
     width: 139px;
-    background-image: url(/assets/img/topoaplastado.png);
+    background-image: url(/img/topoaplastado.png);
     background-repeat: no-repeat;
     background-size: contain;
     margin: auto;
@@ -60,7 +60,7 @@
     align-items: center;
     height: 140px;
     width: 139px;
-    background-image: url(/assets/img/bomba.png);
+    background-image: url(/img/bomba.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 0px 12px;
@@ -72,7 +72,7 @@
     align-items: center;
     height: 140px;
     width: 139px;
-    background-image: url(/assets/img/explosion.png);
+    background-image: url(/img/explosion.png);
     background-repeat: no-repeat;
     margin: auto;
 }
@@ -84,7 +84,7 @@
     align-items: center;
     height: 140px;
     width: 139px;
-    background-image: url(/assets/img/topocasco.png);
+    background-image: url(/img/topocasco.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 7px -15px;
@@ -96,7 +96,7 @@
     align-items: center;
     height: 140px;
     width: 139px;
-    background-image: url(/assets/img/topocascosaliendo.png);
+    background-image: url(/img/topocascosaliendo.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 10px 5px;

@@ -188,6 +188,10 @@ select { /* 1 */
   text-transform: none;
 }
 
+audio{
+  display: none;
+}
+
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */

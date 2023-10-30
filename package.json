@@ -1,0 +1,22 @@
+{
+  "name": "aplasta-topos",
+  "version": "1.0.0",
+  "description": "Team exercise with tree",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rengi46/Aplasta-Topos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rengi46/Aplasta-Topos/issues"
+  },
+  "homepage": "https://github.com/rengi46/Aplasta-Topos#readme",
+  "dependencies": {
+    "firebase": "^10.5.2"
+  }
+}

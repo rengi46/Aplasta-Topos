@@ -4,14 +4,17 @@ Cuadrado.forEach(cuadrado => {
     cuadrado.addEventListener("click", () => {
         if (cuadrado.classList[1] == "oso") {
             aplastaoso(cuadrado)
+            audio_coin.play()
         }else if (cuadrado.classList[1] == "cascoOso"){
             aplastaCascoOso(cuadrado)
+            audio_hit.play()
         }
         else if(cuadrado.classList[1] == "bomb"){
             aplastabomba(cuadrado)
         }
         else if (cuadrado.classList[1] == undefined){
             console.log("no hay nada")
+            audio_fail.play()
         }
     });
 });
@@ -19,7 +22,7 @@ Cuadrado.forEach(cuadrado => {
 
 //TODO button Start
 function start() {
-    imgModal.src="/assets/img/redy.png"
+    imgModal.src="/img/redy.png"
     // printName()
     closeModal()
     abrirModalGo()

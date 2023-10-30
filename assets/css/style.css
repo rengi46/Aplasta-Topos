@@ -1,12 +1,8 @@
 body{
     background-color:rgba(156,230,81,255);
-    cursor: url(/assets/img/cursor4.cur),pointer;
 }
 
-/* todo cursor img */
-*:active{
-    cursor: url(/assets/img/cursor3.cur),pointer;
-}
+
 
 .caracteristics{
     display: flex;
@@ -42,13 +38,6 @@ body{
     /* padding-top: 5px; */
 }
 
-/* todo nivel
-.lvl{
-    height: 60px;
-    width: 180px;
-    background-image: url(/assets/img/3vidas.png);
-    background-size: cover;
-} */
 
 /*todo nombre user */
 .user_box{

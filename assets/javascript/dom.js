@@ -35,3 +35,8 @@ allScores = document.getElementById('allScores')
 topTen = document.getElementById('topTen')
 closeScore = document.getElementById('closeScore')
 
+
+//TODO audios game
+const audio_coin = document.getElementById("audio_coin")
+const audio_hit = document.getElementById("audio_hit")
+const audio_fail = document.getElementById("audio_fail")
