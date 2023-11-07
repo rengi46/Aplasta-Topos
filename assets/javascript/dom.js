@@ -1,6 +1,7 @@
 //TODO funtction to update dom Element
 function callDom() {
     //TODO Table dom
+    tableDivScore = document.getElementById('tableDivScore')
     tableDiv = document.getElementById('tableDiv')
     table = document.getElementById('scoreTable')
 }

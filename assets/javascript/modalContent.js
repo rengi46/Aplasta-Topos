@@ -3,8 +3,8 @@
 function modalStart() {
     cleanModal()
     modalContent[0].appendChild(newH2('Welcome'))
-    modalContent[0].appendChild(newButton('START', 'start()'))
-    modalContent[0].appendChild(newButton('rules', 'rules()'))
+    modalContent[0].appendChild(newButton('Start', 'start()'))
+    modalContent[0].appendChild(newButton('Rules', 'rules()'))
     modalContent[0].appendChild(newButton('Display Scores', 'displayScore(topTen)'))
     openModal()
 }
@@ -16,7 +16,7 @@ function rules(){
     modalContent[0].appendChild(newH2('Rules'))
     modalContent[0].appendChild(newP('<b>60</b> seconds countdown <br>  kill the maximum number of moles'))
     modalContent[0].appendChild(newP('<b>Mole:</b> 100 points <br> <b> Mole Helmet:</b> 50 points for helmet<br> <b>Bomb: </b>Click and you will die'))
-    modalContent[0].appendChild(newButton('Return', 'modalStart()'))
+    modalContent[0].appendChild(newButton('Return', 'youwin()'))
     openModal()
 }
 
@@ -51,9 +51,11 @@ function saveUser(){
 
 //TODO Display modal Win
 function youwin() {
-    modalContent[0].appendChild(newH2("Score Board"))
-    modalContent[0].appendChild(newButton('Display Tabla Modal', 'displaytabla(topTen)'))
-    modalContent[0].appendChild(newButton('Display tabla ', 'displayScore(topTen)'))
+    closeModal()
+    modalContent[0].appendChild(newH2("You Win"))
+    modalContent[0].appendChild(newP("As ganado un descuento del 10% en tu proxima compra"))
+    // modalContent[0].appendChild(newP("para reclamarlo registrate en la pagina web de este codigo QR"))
+    modalContent[0].appendChild(newImg("/img/win.png", "you win"))
     modalContent[0].appendChild(newButton('Back to Start', 'modalStart()'))
     openModal()
 }

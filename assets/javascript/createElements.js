@@ -12,6 +12,13 @@ function newP(newContent) {
     return result
 }
 
+function newImg(src, alt) {
+    result = document.createElement('img')
+    result.setAttribute('src', src)
+    result.setAttribute('alt', alt)
+    return result
+}
+
 //TODO create Element input
 function newInput() {
     result = document.createElement('input')
