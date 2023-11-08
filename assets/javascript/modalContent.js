@@ -42,6 +42,7 @@ function yourloose(text = 'Try again') {
 
 //TODO Display modal Time
 function yourTime(time){
+    closeModal()
     deleteGarden()
     text= `Your Score is:${time} `
     modalContent[0].appendChild(newH2(text))
@@ -61,13 +62,12 @@ function saveUser(){
 }
 
 //TODO Display modal Win
-function youwin() {
+function youwin(score) {
     closeModal()
     modalContent[0].appendChild(newH2("You Win"))
     modalContent[0].appendChild(newP("As ganado un descuento del 10% en tu proxima compra"))
-    // modalContent[0].appendChild(newP("para reclamarlo registrate en la pagina web de este codigo QR"))
     modalContent[0].appendChild(newImg("/img/win.png", "you win"))
-    modalContent[0].appendChild(newButton('Back to Start', 'modalStart()'))
+    modalContent[0].appendChild(newButton('Back to Start', `yourTime(${score})`))
     openModal()
 }
 

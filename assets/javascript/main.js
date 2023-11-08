@@ -52,7 +52,12 @@ function TimeBar() {
     Tprogres.classList.add("timeOut")
     gameTime = setTimeout(function () {
         cleanModal()
-        yourTime(calculateScore())
+        const score = calculateScore()
+        if(score<1000){
+            yourTime(score)
+        }else{
+            youwin(score)
+        }
     }, 60000)
 }
 
