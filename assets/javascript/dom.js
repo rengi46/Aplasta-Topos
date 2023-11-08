@@ -16,7 +16,9 @@ const username = document.getElementById('userInput')
 
 //TODO oso
 const oso = document.querySelector(".oso")
-const Cuadrado = document.querySelectorAll(".hueco")
+function getGarden() {
+    return document.querySelectorAll(".hueco")
+}
 
 //TODO Dom Modal window
 const modal = document.getElementById("myModal");

@@ -3,9 +3,18 @@
 function modalStart() {
     cleanModal()
     modalContent[0].appendChild(newH2('Welcome'))
-    modalContent[0].appendChild(newButton('Start', 'start()'))
+    modalContent[0].appendChild(newButton('Start', 'modalDifficulty()'))
     modalContent[0].appendChild(newButton('Rules', 'rules()'))
     modalContent[0].appendChild(newButton('Display Scores', 'displayScore(topTen)'))
+    openModal()
+}
+
+function modalDifficulty() {
+    cleanModal()
+    modalContent[0].appendChild(newH2('Welcome'))
+    modalContent[0].appendChild(newButton('Easy', 'start(3)'))
+    modalContent[0].appendChild(newButton('Medium', 'start(2)'))
+    modalContent[0].appendChild(newButton('Hard', 'start(1)'))
     openModal()
 }
 
@@ -24,17 +33,19 @@ function rules(){
 
 //TODO Display modal Lose
 function yourloose(text = 'Try again') {
+    deleteGarden()
     modalContent[0].appendChild(newH2(text))
     modalContent[0].appendChild(newP("Try again"))
-    modalContent[0].appendChild(newButton('Try again', 'next()'))
+    modalContent[0].appendChild(newButton('Try again', 'modalDifficulty()'))
     openModal()
 }
 
 //TODO Display modal Time
 function yourTime(time){
+    deleteGarden()
     text= `Your Score is:${time} `
     modalContent[0].appendChild(newH2(text))
-    modalContent[0].appendChild(newButton('Try again', 'next()'))
+    modalContent[0].appendChild(newButton('Try again', 'modalDifficulty()'))
     modalContent[0].appendChild(newP('Insert Your User Name For save your Score'))
     modalContent[0].appendChild(newInput())
     modalContent[0].appendChild(newButton('Save', 'saveUser()'))
@@ -114,10 +125,11 @@ function cleanTableDiv(){
 }
 
 //TODO Open modal
-function abrirModalGo(){
+function abrirModalGo(lvl){
+    aplasta()
     nuevoModal.style.visibility="visible"
     setTimeout(()=>{
-        Dificultad(score)
+        Dificultad(lvl)
         imgModal.src="/img/go.png"
         setTimeout(()=>{
             nuevoModal.style.visibility="hidden"

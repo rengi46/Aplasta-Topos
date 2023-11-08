@@ -10,5 +10,7 @@ var scoreResult = 0
 var userBook
 var orderUserBook
 
+var Cuadrado
+
 var timedespues
 var listUser

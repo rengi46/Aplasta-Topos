@@ -1,74 +1,80 @@
 
 
 //TODO dificult Level
-function Dificultad(nivel=0, time = 50, max = 1000) {
-  // const d = max - (nivel*time)
+function Dificultad(nivel=1) {
+
+  const d = (nivel*1000)
       moveSpeed = setInterval(()=>{
-          añadiendolo()}, 1500)
+          añadiendolo(nivel)
+      }, d)
 }
 
 //TODO Add mole
-function añadiendolo() {
-  Cajaaleatoria = Cuadrado[Math.floor(Math.random() * 12)]
+function añadiendolo(nivel) {
+  const Cuadrado = getGarden()
+  const dificultad = (nivel * 1000) - 400
+  Cajaaleatoria = Cuadrado[Math.floor(Math.random() * Cuadrado.length)]
   var personaje = Math.floor(Math.random() * 10)
   const doble = Math.floor(Math.random() * 10)
   if(doble < 4){
-    var Cajaaleatoria2 = Cuadrado[Math.floor(Math.random() * 12)]
+    var Cajaaleatoria2 = Cuadrado[Math.floor(Math.random() * Cuadrado.length)]
   }
-  if(personaje < 2){
+  if(personaje < 1){
 
   }
   else if(personaje < 6 ){
-      topo(Cajaaleatoria)
-      if(doble < 4) topo(Cajaaleatoria2)
+      topo(Cajaaleatoria,dificultad)
+      if(doble < 4) topo(Cajaaleatoria2, dificultad)
   }
   else if( personaje < 9){
-      casco(Cajaaleatoria)
-      if(doble < 2) casco(Cajaaleatoria2)
+      casco(Cajaaleatoria,dificultad)
+      if(doble < 2) casco(Cajaaleatoria2, dificultad)
   }
   else if(personaje > 8){
-      bomb(Cajaaleatoria)
-      if(doble < 4) topo(Cajaaleatoria2)
+      bomb(Cajaaleatoria,dificultad)
+      if(doble < 4) topo(Cajaaleatoria2, dificultad)
   }
 };
 
 
 //TODO
-function topo(a){
+function topo(a,d){
   a.classList.add("ososal")
   setTimeout(()=>{
       a.classList.remove("ososal")
       a.classList.add("oso")
       setTimeout(()=>{
+        if(a.classList[1] !== "oso") return
           a.classList.remove("oso")
           a.classList.add("ososal")
             setTimeout(()=>{
               a.classList.remove("ososal")
           },200) //tiempo al bajar
-      },700) //tiempo salido
+      },d) //tiempo salido
   },200)     //tiempo al salir
 }
 
 //TODO add remove helmet
-function casco(a){
+function casco(a,d){
   a.classList.add("cascoBajando")
   setTimeout(()=>{
       a.classList.remove("cascoBajando")
       a.classList.add("cascoOso")
       setTimeout(()=>{
+        if(a.classList[1] !== "cascoOso") return
         a.classList.remove("cascoOso")
         a.classList.add("cascoBajando")
         setTimeout(()=>{
           a.classList.remove("cascoBajando")
       },200) //tiempo al bajar
-    },700)   //tiempo salido
+    },d)   //tiempo salido
   },200)     //tiempo al salir
 }
 
 //TODO add and remove bomb
-function bomb(a){
+function bomb(a,d){
   a.classList.add("bomb")
-  setTimeout(()=>{a.classList.remove("bomb")},600)
+  setTimeout(()=>{a.classList.remove("bomb")},d)
 }
 
 
@@ -83,7 +89,7 @@ function aplastaCascoOso(a){
         setTimeout(()=>{
           a.classList.remove("ososal")
       },250) //tiempo al bajar
-  },600) //tiempo salido
+  },700) //tiempo salido
   addScore(50)
 }
 
@@ -97,7 +103,7 @@ function aplastabomba(a){
       a.classList.remove("explo")
       cleanModal()
       yourloose("Te exploto en toda la cara")
-      modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} seconds`))
+      modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} `))
       resetGame()
   },1000)
 }

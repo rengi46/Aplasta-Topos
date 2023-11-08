@@ -93,3 +93,30 @@ function showScores(book) {
     });
     //return table
 };
+
+function createhueco(num){
+    hueco = document.createElement('div')
+    hueco.classList.add('hueco')
+    hueco.setAttribute('id', 'hueco'+num)
+    return hueco
+}
+
+function createGarden(){
+
+    const cols = Math.floor(window.innerWidth/150)
+    const rows = Math.floor(window.innerHeight/150)
+    const numHuecos = cols*rows
+    const garden = document.getElementById('grid_hueco')
+    garden.style.gridTemplateColumns = `repeat(${cols}, 1fr)`
+    garden.style.gridTemplateRows = `repeat(${rows}, 1fr)`
+    for (let i = 0; i < numHuecos; i++) {
+        garden.appendChild(createhueco(i))
+    }
+}
+
+function deleteGarden(){
+    const garden = document.getElementById('grid_hueco')
+    while (garden.firstChild) {
+        garden.removeChild(garden.lastChild);
+    }
+}

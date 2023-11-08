@@ -22,6 +22,5 @@ function displayScore(name){
 function hideScore(){
   tableDivScore.classList.remove('show')
   tableDivScore.classList.add('hide')
-
   modalStart()
 }

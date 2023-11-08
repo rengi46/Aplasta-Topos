@@ -3,6 +3,17 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+#container1{
+    background-image: url(/img/Background1.png);
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
 
 
 .caracteristics{
