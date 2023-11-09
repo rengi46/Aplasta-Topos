@@ -105,9 +105,11 @@ function createhueco(num){
 }
 
 function createGarden(){
-
-    const cols = Math.floor(window.innerWidth/250)
-    const rows = Math.floor(window.innerHeight/180)
+    
+    let cols = Math.floor(window.innerWidth/250)
+    let rows = Math.floor(window.innerHeight/180)
+    if (cols < 6) cols = 6
+    if (rows < 6) rows = 6
     const numHuecos = cols*rows
     const garden = document.getElementById('grid_hueco')
     garden.style.gridTemplateColumns = `repeat(${cols}, 1fr)`
