@@ -54,6 +54,7 @@
     background-repeat: no-repeat;
     background-size:cover;
     opacity: 0.9;
+    background-position: -40px 0px;
     /* -webkit-border-radius: 50px; */
     /* -moz-border-radius: 50px; */
     /* background-position: 0px -30px; */
@@ -81,7 +82,7 @@
     font-size: 40px;
 }
 .modal-content>p{ background-color: rgba(0, 0, 0, 0.0);
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 20px;
     font-weight: 400;
     text-align: center;}
