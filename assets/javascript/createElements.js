@@ -106,7 +106,7 @@ function createhueco(num){
 
 function createGarden(){
 
-    const cols = Math.floor(window.innerWidth/200)
+    const cols = Math.floor(window.innerWidth/250)
     const rows = Math.floor(window.innerHeight/180)
     const numHuecos = cols*rows
     const garden = document.getElementById('grid_hueco')
