@@ -18,7 +18,7 @@
     padding: 10%;
     background-image: url(/img/hueco.PNG);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     margin: auto;
     overflow: visible ;
 }
@@ -33,7 +33,7 @@
     padding: 10%;
     background-image: url(/img/topoSalido.PNG);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     margin: auto;
 }
 .ososal{
@@ -45,7 +45,7 @@
     padding: 10%;
     background-image: url(/img/mediotopo.PNG);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     margin: auto;
 }
 
@@ -58,7 +58,7 @@
     padding: 10%;
     background-image: url(/img/topoaplastado.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: 0px -2px;
     margin: auto;
 }
@@ -99,8 +99,8 @@
     padding: 10%;
     background-image: url(/img/topocasco.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 30px 45%;
+    background-size: 105%;
+    background-position: 30px 50%;
 }
 
 .cascoBajando{
@@ -112,6 +112,6 @@
     padding: 10%;
     background-image: url(/img/topocascosaliendo.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: 10px 5px;
 }
