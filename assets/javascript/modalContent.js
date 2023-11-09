@@ -25,7 +25,7 @@ function rules(){
     modalContent[0].appendChild(newH2('Rules'))
     modalContent[0].appendChild(newP('<b>60</b> seconds countdown <br>  kill the maximum number of moles'))
     modalContent[0].appendChild(newP('<b>Mole:</b> 100 points <br> <b> Mole Helmet:</b> 50 points for helmet<br> <b>Bomb: </b>Click and you will die'))
-    modalContent[0].appendChild(newButton('Return', 'youwin()'))
+    modalContent[0].appendChild(newButton('Return', 'modalStart()'))
     openModal()
 }
 
@@ -58,7 +58,7 @@ function saveUser(){
     addUser(name)
     orderBook()
     resetGame()
-    modalStart()
+    displayScore()
 }
 
 //TODO Display modal Win

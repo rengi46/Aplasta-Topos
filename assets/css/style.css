@@ -81,9 +81,8 @@ body{
     background-color: red;
 }
 .timeOut{
-    transition: width 60s;
+    transition: width 40s;
     width: 100%;
-
 }
 
 

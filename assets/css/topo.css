@@ -1,20 +1,24 @@
 #grid_hueco{
-
+    width: 100%;
     height: 100%;
     padding-top: 10%;
     display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr;
-    grid-template-rows:1fr 1fr 1fr   ;
+    /* grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr   ; */
+    /* gap: 5%; */
 }
 
 .hueco{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 140px;
-    width: 149px;
+    height: 100%;
+    width: 100%;
     background-image: url(/img/hueco.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: auto;
+    overflow: visible ;
 }
 
 
@@ -22,20 +26,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 140px;
-    width: 139px;
+    height: 100%;
+    width: 100%;
     background-image: url(/img/topoSalido.PNG);
     background-repeat: no-repeat;
+    background-size: cover;
     margin: auto;
 }
 .ososal{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 140px;
-    width: 139px;
+    height: 100%;
+    width: 100%;
     background-image: url(/img/mediotopo.PNG);
     background-repeat: no-repeat;
+    background-size: cover;
     margin: auto;
 }
 
@@ -43,11 +49,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 140px;
-    width: 139px;
+    height: 100%;
+    width: 100%;
     background-image: url(/img/topoaplastado.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: 0px -2px;
     margin: auto;
 }
 
@@ -56,8 +63,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 140px;
-    width: 139px;
+    height: 100%;
+    width: 100%;
     background-image: url(/img/bomba.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -68,8 +75,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 140px;
-    width: 139px;
+    height: 100%;
+    width: 100%;
     background-image: url(/img/explosion.png);
     background-repeat: no-repeat;
     margin: auto;
@@ -80,22 +87,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 140px;
-    width: 139px;
+    height: 100%;
+    width: 100%;
     background-image: url(/img/topocasco.png);
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 7px -15px;
+    background-size: cover;
+    background-position: 10px 50%;
 }
 
 .cascoBajando{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 140px;
-    width: 139px;
+    height: 100%;
+    width: 100%;
     background-image: url(/img/topocascosaliendo.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: 10px 5px;
 }

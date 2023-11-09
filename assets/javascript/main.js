@@ -8,11 +8,12 @@ function aplasta(){
                 aplastaoso(cuadrado)
                 audio_coin.play()
             }else if (cuadrado.classList[1] == "cascoOso"){
-                aplastaCascoOso(cuadrado)
                 audio_hit.play()
+                aplastaCascoOso(cuadrado)
             }
             else if(cuadrado.classList[1] == "bomb"){
                 aplastabomba(cuadrado)
+                audio_explo.play()
             }
             else if (cuadrado.classList[1] == undefined){
                 console.log("no hay nada")
@@ -58,7 +59,7 @@ function TimeBar() {
         }else{
             youwin(score)
         }
-    }, 60000)
+    }, 40000)
 }
 
 //TODO stop Time Bar
@@ -66,5 +67,3 @@ function stopTimeBar() {
     clearTimeout(gameTime)
     Tprogres.classList.remove("timeOut")
 }
-
-

@@ -27,6 +27,9 @@ function newInput() {
     result.setAttribute('id', 'userInput')
     result.classList.add('modal-content')
     result.classList.add('form-element')
+    result.autocomplete = "off";
+    result.inputmode = "text";
+    result.id = 'userInput'
     return result
 }
 
@@ -103,8 +106,8 @@ function createhueco(num){
 
 function createGarden(){
 
-    const cols = Math.floor(window.innerWidth/150)
-    const rows = Math.floor(window.innerHeight/150)
+    const cols = Math.floor(window.innerWidth/200)
+    const rows = Math.floor(window.innerHeight/180)
     const numHuecos = cols*rows
     const garden = document.getElementById('grid_hueco')
     garden.style.gridTemplateColumns = `repeat(${cols}, 1fr)`

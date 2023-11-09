@@ -3,7 +3,7 @@
 //TODO dificult Level
 function Dificultad(nivel=1) {
 
-  const d = (nivel*1000)
+  const d = (nivel*800)
       moveSpeed = setInterval(()=>{
           añadiendolo(nivel)
       }, d)
@@ -102,7 +102,7 @@ function aplastabomba(a){
   setTimeout(()=>{
       a.classList.remove("explo")
       cleanModal()
-      yourloose("Te exploto en toda la cara")
+      yourloose("Te exploto")
       modalContent[0].appendChild(newP(`Your Final Score is : ${calculateScore()} `))
       resetGame()
   },1000)
