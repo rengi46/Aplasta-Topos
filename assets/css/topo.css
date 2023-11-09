@@ -13,9 +13,9 @@
     justify-content: center;
     align-items: center;
     min-height: 140px;
-    height: 90%;
-    width: 90%;
-    padding: 5%;
+    height: 80%;
+    width: 80%;
+    padding: 10%;
     background-image: url(/img/hueco.PNG);
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,9 +28,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90%;
-    width: 90%;
-    padding: 5%;
+    height: 80%;
+    width: 80%;
+    padding: 10%;
     background-image: url(/img/topoSalido.PNG);
     background-repeat: no-repeat;
     background-size: cover;
@@ -40,9 +40,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90%;
-    width: 90%;
-    padding: 5%;
+    height: 80%;
+    width: 80%;
+    padding: 10%;
     background-image: url(/img/mediotopo.PNG);
     background-repeat: no-repeat;
     background-size: cover;
@@ -53,9 +53,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90%;
-    width: 90%;
-    padding: 5%;
+    height: 80%;
+    width: 80%;
+    padding: 10%;
     background-image: url(/img/topoaplastado.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -68,9 +68,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90%;
-    width: 90%;
-    padding: 5%;
+    height: 80%;
+    width: 80%;
+    padding: 10%;
     background-image: url(/img/bomba.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -81,9 +81,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90%;
-    width: 90%;
-    padding: 5%;
+    height: 80%;
+    width: 80%;
+    padding: 10%;
     background-image: url(/img/explosion.png);
     background-repeat: no-repeat;
     margin: auto;
@@ -94,22 +94,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90%;
-    width: 90%;
-    padding: 5%;
+    height: 80%;
+    width: 80%;
+    padding: 10%;
     background-image: url(/img/topocasco.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 10px 45%;
+    background-position: 30px 45%;
 }
 
 .cascoBajando{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90%;
-    width: 90%;
-    padding: 5%;
+    height: 80%;
+    width: 80%;
+    padding: 10%;
     background-image: url(/img/topocascosaliendo.png);
     background-repeat: no-repeat;
     background-size: cover;
