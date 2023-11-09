@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 140px;
     height: 100%;
     width: 100%;
     background-image: url(/img/hueco.PNG);
