@@ -106,7 +106,7 @@ function createhueco(num){
 
 function createGarden(){
     
-    let cols = Math.floor(window.innerWidth/250)
+    let cols = Math.floor(window.innerWidth/200)
     let rows = Math.floor(window.innerHeight/180)
     if (cols > 6) cols = 6
     if (rows > 6) rows = 6

@@ -19,7 +19,6 @@
     background-image: url(/img/hueco.PNG);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
     margin: auto;
     overflow: visible ;
 }
@@ -35,7 +34,6 @@
     background-image: url(/img/topoSalido.PNG);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
     margin: auto;
 }
 .ososal{
@@ -48,7 +46,6 @@
     background-image: url(/img/mediotopo.PNG);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
     margin: auto;
 }
 
