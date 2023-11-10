@@ -94,13 +94,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80%;
-    width: 80%;
-    padding: 10%;
+    height: 70%;
+    width: 70%;
+    padding: 17.5%;
+    margin: -10%;
     background-image: url(/img/topocasco.png);
     background-repeat: no-repeat;
-    background-size: 105%;
-    background-position: 20px -45px;
+    background-size: contain;
+    background-position: 10px 15px;
 }
 
 .cascoBajando{
@@ -113,5 +114,5 @@
     background-image: url(/img/topocascosaliendo.png);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: 10px 5px;
+    /* background-position: 10px 5px; */
 }
