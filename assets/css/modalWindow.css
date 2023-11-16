@@ -81,6 +81,13 @@
     color: rgb(255, 255, 255);
     font-size: 40px;
 }
+.modal-content>h3{ 
+    background-color: rgba(0, 0, 0, 0.0);
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+    font-size: 37px;
+}
 .modal-content>p{ background-color: rgba(0, 0, 0, 0.0);
     color: rgb(255, 255, 255);
     font-size: 20px;

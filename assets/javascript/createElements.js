@@ -5,6 +5,11 @@ function newH2(newContent) {
     result.innerHTML = newContent
     return result
 }
+function newH3(newContent) {
+    result = document.createElement('h3')
+    result.innerHTML = newContent
+    return result
+}
 //TODO create Element  paragraf
 function newP(newContent) {
     result = document.createElement('p')
