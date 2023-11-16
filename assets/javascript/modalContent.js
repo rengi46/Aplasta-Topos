@@ -65,7 +65,7 @@ function saveUser(){
 function youwin(score) {
     closeModal()
     modalContent[0].appendChild(newH2("You Win"))
-    modalContent[0].appendChild(newH3("As ganado un descuento del 10% en tu proxima compra"))
+    modalContent[0].appendChild(newH3("¡Has ganado un descuento del 10% en tu próxima compra!"))
     modalContent[0].appendChild(newImg("/img/win.png", "you win"))
     modalContent[0].appendChild(newButton('Back to Start', `yourTime(${score})`))
     openModal()
