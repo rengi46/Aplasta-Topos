@@ -111,10 +111,13 @@ function createhueco(num){
 
 function createGarden(){
     console.log(window.innerHeight);
+    if(window.innerWidth<300 || window.innerHeight<230){
+        alert("Please, resize your window")
+        return
+    }
     
     let cols = Math.floor(window.innerWidth/300)
     let rows = Math.floor(window.innerHeight/230)
-    console.log(cols);
     if (cols > 6) cols = 6
     if (rows > 6) rows = 6
     const numHuecos = cols*rows
