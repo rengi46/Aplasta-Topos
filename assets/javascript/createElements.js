@@ -111,15 +111,18 @@ function createhueco(num){
 
 function createGarden(){
     console.log(window.innerHeight);
-    if(window.innerWidth<400 || window.innerHeight<400){
-        alert("Please, resize your window "+window.innerWidth+" "+window.innerHeight)
-        return
-    }
+    // if(window.innerWidth<400 || window.innerHeight<400){
+    //     alert("Please, resize your window "+window.innerWidth+" "+window.innerHeight)
+    //     return
+    // }
     
+
     let cols = Math.floor(window.innerWidth/300)
     let rows = Math.floor(window.innerHeight/230)
-    if (cols > 6) cols = 6
-    if (rows > 6) rows = 6
+    if(cols<3) cols = 3
+    else if (cols > 6) cols = 6
+    if(rows<3) rows = 3
+    else if (rows > 6) rows = 6
     const numHuecos = cols*rows
     const garden = document.getElementById('grid_hueco')
     garden.style.gridTemplateColumns = `repeat(${cols}, 1fr)`
