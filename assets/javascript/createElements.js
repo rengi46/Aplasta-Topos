@@ -111,8 +111,8 @@ function createhueco(num){
 
 function createGarden(){
     console.log(window.innerHeight);
-    if(window.innerWidth<300 || window.innerHeight<230){
-        alert("Please, resize your window")
+    if(window.innerWidth<400 || window.innerHeight<400){
+        alert("Please, resize your window "+window.innerWidth+" "+window.innerHeight)
         return
     }
     
