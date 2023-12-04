@@ -16,6 +16,7 @@ function addUser(name) {
 
     localStorage.setItem('userBook', JSON.stringify(userBook))
 }
+
 //TODO create a user object
 function user(name = 'guest', score = 0) {
     return {

@@ -63,6 +63,7 @@ function saveUser(){
 
 //TODO Display modal Win
 function youwin(score) {
+    window.location.href = `http://localhost:3000/qr/1/${score}`
     closeModal()
     modalContent[0].appendChild(newH2("You Win"))
     modalContent[0].appendChild(newH3("¡Has ganado un descuento del 10% en tu próxima compra!"))

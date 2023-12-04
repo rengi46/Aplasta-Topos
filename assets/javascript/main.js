@@ -49,17 +49,31 @@ function resetGame() {
 }
 
 //TODO Run time Bar
-function TimeBar() {
+async function TimeBar() {
     Tprogres.classList.add("timeOut")
-    gameTime = setTimeout(function () {
+    gameTime = setTimeout(async function () {
+        console.log("timeOut");
         cleanModal()
+        const maxScore = await getMaxScore()
+        alert(maxScore)
         const score = calculateScore()
-        if(score<1000){
+        if(score<maxScore){
             yourTime(score)
         }else{
             youwin(score)
         }
-    }, 40000)
+    }, 10000)
+}
+
+async function getMaxScore(){
+    const dataJson = await  fetch('http://localhost:1337/api/juegos')
+    const data = await dataJson.json()
+    const maxScore = data.data.find((element) => {
+        if(element.attributes.Juego == "topos"){
+            return element.attributes.UmbraPremio
+        }
+    })
+    return maxScore.attributes.UmbraPremio
 }
 
 //TODO stop Time Bar
