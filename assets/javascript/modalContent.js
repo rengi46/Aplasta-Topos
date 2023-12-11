@@ -64,7 +64,7 @@ function saveUser(){
 //TODO Display modal Win
 function youwin(score) {
     if (window.parent) {
-    window.parent.location.href = `http://localhost:3000/qr/1/${score}`
+    window.parent.location.href = `https://chimerical-sherbet-2dff30.netlify.app/qr/1/${score}`
     }
     closeModal()
     modalContent[0].appendChild(newH2("You Win"))
