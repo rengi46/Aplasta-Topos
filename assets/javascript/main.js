@@ -1,4 +1,5 @@
 
+
 //TODO click events
 function aplasta(){
     Cuadrado = getGarden()
@@ -55,21 +56,21 @@ async function TimeBar() {
         console.log("timeOut");
         cleanModal()
         const maxScore = await getMaxScore()
-        alert(maxScore)
         const score = calculateScore()
         if(score<maxScore){
             yourTime(score)
         }else{
             youwin(score)
         }
-    }, 10000)
+    }, 40000)
 }
 
 async function getMaxScore(){
+    const url = "https://sublime-vitality-a95aa26464.strapiapp.com/"
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", "Bearer fed5a6a3c56289b7bf9bd27f7f720ee593ae153bfed739bfc5a12a720202c66582833baae082fd5591bda5dc40015f31ce1a13c8e7d40cc0a879cdcd23566337e207d42805bd1d6897c603c1bdc989db7d6d034d5827d40619222969258a9445765db2417af1f8d31b7ac7b8a323a4a33af660f56f372a9d5f7d5f1a463f7501");
-    const dataJson = await  fetch('https://celebrated-friends-2382d9c517.strapiapp.com/api/juegos',
+    myHeaders.append("Authorization", "Bearer bd49c332c96a0be405205fef70df5a241a3feb34ea7951bdcf02a248147a4daddc3769f7905235d0b0cac06b873b310d67abbea2061b24af1205b7527d49df5b2ef0027e13bb7dcb09796026c4b3d1b78e09f89409b2824fde23a6b7dc8d87b0d489122bb593668bdf3992874476cbea48aadace225cf19a913ad7529dbf0923");
+    const dataJson = await  fetch(url+'api/juegos',
     {
         method: 'GET',
         headers: myHeaders,
