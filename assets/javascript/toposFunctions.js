@@ -3,7 +3,7 @@
 //TODO dificult Level
 function Dificultad(nivel=1) {
 
-  const d = (nivel*800)
+  const d = (nivel*850)
       moveSpeed = setInterval(()=>{
           añadiendolo(nivel)
       }, d)

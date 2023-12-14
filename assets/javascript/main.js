@@ -62,7 +62,7 @@ async function TimeBar() {
         }else{
             youwin(score)
         }
-    }, 40000)
+    }, 35000)
 }
 
 async function getMaxScore(){

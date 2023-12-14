@@ -35,8 +35,8 @@ function rules(){
 function yourloose(text = 'Try again') {
     deleteGarden()
     modalContent[0].appendChild(newH2(text))
-    modalContent[0].appendChild(newP("Try again"))
     modalContent[0].appendChild(newButton('Try again', 'modalDifficulty()'))
+    modalContent[0].appendChild(newImg("/img/registerLosers.png", "you not win"))
     openModal()
 }
 
@@ -47,9 +47,7 @@ function yourTime(time){
     text= `Your Score is:${time} `
     modalContent[0].appendChild(newH2(text))
     modalContent[0].appendChild(newButton('Try again', 'modalDifficulty()'))
-    modalContent[0].appendChild(newP('Insert Your User Name For save your Score'))
-    modalContent[0].appendChild(newInput())
-    modalContent[0].appendChild(newButton('Save', 'saveUser()'))
+    modalContent[0].appendChild(newImg("/img/registerLosers.png", "you not win"))
     openModal()
 }
 
@@ -67,11 +65,11 @@ function youwin(score) {
     window.parent.location.href = `https://chimerical-sherbet-2dff30.netlify.app/qr/1/${score}`
     }
     closeModal()
-    modalContent[0].appendChild(newH2("You Win"))
-    modalContent[0].appendChild(newH3("¡Has ganado un descuento del 10% en tu próxima compra!"))
-    modalContent[0].appendChild(newImg("/img/win.png", "you win"))
-    modalContent[0].appendChild(newButton('Back to Start', `yourTime(${score})`))
-    openModal()
+    // modalContent[0].appendChild(newH2("You Win"))
+    // modalContent[0].appendChild(newH3("¡Has ganado un descuento del 10% en tu próxima compra!"))
+    // modalContent[0].appendChild(newImg("/img/win.png", "you win"))
+    // modalContent[0].appendChild(newButton('Back to Start', `yourTime(${score})`))
+    // openModal()
 }
 
 
