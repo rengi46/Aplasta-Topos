@@ -5,7 +5,7 @@ function modalStart() {
     modalContent[0].appendChild(newH2('Welcome'))
     modalContent[0].appendChild(newButton('Start', 'modalDifficulty()'))
     modalContent[0].appendChild(newButton('Rules', 'rules()'))
-    modalContent[0].appendChild(newButton('Display Scores', 'displayScore(topTen)'))
+    modalContent[0].appendChild(newButton('Exit', 'exit()'))
     openModal()
 }
 
@@ -25,7 +25,7 @@ function rules(){
     modalContent[0].appendChild(newH2('Rules'))
     modalContent[0].appendChild(newP('<b>60</b> seconds countdown <br>  kill the maximum number of moles'))
     modalContent[0].appendChild(newP('<b>Mole:</b> 100 points <br> <b> Mole Helmet:</b> 50 points for helmet<br> <b>Bomb: </b>Click and you will die'))
-    modalContent[0].appendChild(newButton('Return', 'youwin()'))
+    modalContent[0].appendChild(newButton('Return', 'modalStart()'))
     openModal()
 }
 
@@ -62,14 +62,13 @@ function saveUser(){
 //TODO Display modal Win
 function youwin(score) {
     if (window.parent) {
-    window.parent.location.href = `https://chimerical-sherbet-2dff30.netlify.app/qr/1/${score}`
+    window.parent.location.href = `${URLGame}qr/1/${score}`
     }
     closeModal()
-    // modalContent[0].appendChild(newH2("You Win"))
-    // modalContent[0].appendChild(newH3("¡Has ganado un descuento del 10% en tu próxima compra!"))
-    // modalContent[0].appendChild(newImg("/img/win.png", "you win"))
-    // modalContent[0].appendChild(newButton('Back to Start', `yourTime(${score})`))
-    // openModal()
+}
+
+function exit(){
+    window.location.href = URLGame
 }
 
 

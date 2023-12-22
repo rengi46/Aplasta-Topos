@@ -1,3 +1,5 @@
+const URLGame = "https://chimerical-sherbet-2dff30.netlify.app/"
+
 
 var startTime;
 var afterTime;
